@@ -10,6 +10,7 @@
 | Back In Stock       | Missing Sales Recovery                    | Install Req. |
 | Elementor           | Custom Landing Pages                      | Ready        |
 | Slider Revolution   | High-end Banners (Optimized)              | Ready        |
+| SupportCandy        | Private Support (Buyer Bridge)            | Ready        |
 
 ## Senior Architect and Business Analyst roadmap
 
@@ -44,6 +45,7 @@ and risk management.
 
 - Recommended: FreeScout (open-source Help Scout clone).
 - Alternative: osTicket.
+- Private support: SupportCandy (in-dashboard support inside WordPress).
 - Deploy on support subdomain (support.yourbrand.com) on the same server.
 
 ### 5) Final Senior Architect review and checklist
@@ -70,8 +72,8 @@ and risk management.
 
 - Installs Nginx, MariaDB, PHP-FPM, and required PHP modules
   (imagick, redis, mysql, xml, mbstring, zip, intl, bcmath, soap).
-- Installs WordPress + WooCommerce, Elementor, Variation Swatches, and
-  Back In Stock notifier.
+- Installs WordPress + WooCommerce, Elementor, Variation Swatches,
+  Back In Stock notifier, and SupportCandy.
 - Configures Nginx vhost and optional FastCGI cache.
 - Installs and configures Redis object cache (optional).
 - Installs and configures UFW + Fail2Ban (optional).
@@ -82,6 +84,7 @@ and risk management.
 
 - Uptime Kuma deployment (best on a separate low-cost box).
 - FreeScout or osTicket support desk (use a support subdomain).
+- SupportCandy private support desk (WordPress plugin).
 - Premium plugins (Blonwe Core, Slider Revolution) must be uploaded manually.
 - Fashion template import via Starter Templates (from wp-admin).
 
@@ -233,6 +236,7 @@ and business review requirements.
 - [ ] **TODO by User** Deploy Uptime Kuma (separate box or Docker).
 - [ ] **TODO by User** Configure SSL/HTTP checks + Slack/Telegram alerts.
 - [ ] **TODO by User** Connect FreeScout to business SMTP email.
+- [ ] **TODO by User** Configure SupportCandy mailboxes and workflows.
 - [ ] **TODO by User** Run Advanced Database Cleaner to purge demo transients.
 
 ## Senior Infrastructure and Business Analyst review

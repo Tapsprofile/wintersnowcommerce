@@ -45,6 +45,7 @@ wp_plugins:
   - starter-templates
   - woo-variation-swatches
   - back-in-stock-notifier-for-woocommerce
+  - supportcandy
 wp_plugins_redis:
   - redis-cache
 
