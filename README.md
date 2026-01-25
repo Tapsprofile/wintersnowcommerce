@@ -138,3 +138,115 @@ the fashion template you want.
 
 - WooCommerce installs at the latest available version.
 - For PHP 8.2 or 8.3 on Ubuntu 22.04, enable the Ondrej PPA in variables.
+
+## Runbook: step-by-step execution (automated + manual)
+
+This runbook is written as a senior Infrastructure + Business Analyst
+work-items list. Automated items are executed by the script; manual items
+are explicitly marked as **TODO by User**.
+
+### Step 0: Pre-flight checks (manual)
+
+1. Confirm DNS is ready for your domain.
+2. Confirm you have sudo/root access.
+3. Confirm SSH port policy with your security team.
+
+### Step 1: Configure Ansible variables (manual)
+
+Edit:
+
+```
+provision/group_vars/all.yml
+```
+
+Minimum required:
+
+- `site_domain`, `site_server_name`, `site_root`
+- `wp_site_url`, `wp_admin_user`, `wp_admin_password`, `wp_admin_email`
+- `db_name`, `db_user`, `db_password`
+
+Recommended enterprise defaults:
+
+- `php_version: "8.3"`
+- `enable_ondrej_php_ppa: true`
+- `enable_fastcgi_cache: true`
+- `enable_redis: true`
+- `enable_firewall: true`
+- `enable_fail2ban: true`
+- `enable_certbot: true` (only after DNS is live)
+
+### Step 2: Execute the automated provisioning (script)
+
+```
+sudo bash setup.sh
+```
+
+This installs the LEMP stack, WordPress, WooCommerce, Elementor, Variation
+Swatches, Back In Stock notifier, Redis cache (optional), UFW + Fail2Ban
+(optional), Netdata/GoAccess (optional), and Nginx FastCGI cache (optional).
+
+### Step 3: Verify service health (manual)
+
+1. `systemctl status nginx mariadb php{{ php_version }}-fpm`
+2. `redis-cli ping` (expect `PONG`) if Redis is enabled.
+3. Open the site URL and finish WP login.
+
+### Step 4: SSL enablement (if not enabled in Step 1)
+
+If DNS is live and you want Lets Encrypt:
+
+- Set `enable_certbot: true`
+- Populate `certbot_domains`
+- Re-run `sudo bash setup.sh`
+
+### Step 5: Fashion template import (manual)
+
+- Log in to `/wp-admin`
+- Navigate to **Appearance → Starter Templates**
+- Import your preferred fashion template
+
+## Manual work items (TODO by User)
+
+These are intentionally left manual due to licensing, data ownership,
+and business review requirements.
+
+### Phase 1: Server hardening (Hour 1)
+
+- [ ] **TODO by User** Change SSH port from 22 to a custom port (e.g., 2299).
+- [ ] **TODO by User** Confirm UFW rules (SSH + HTTP/HTTPS only).
+- [ ] **TODO by User** Confirm Redis exposure policy (local-only preferred).
+
+### Phase 2: Data and visual import (Hour 2)
+
+- [ ] **TODO by User** Run Blonwe demo importer (1-click design).
+- [ ] **TODO by User** Import product CSV (variable products with attributes).
+- [ ] **TODO by User** Convert attributes to visual swatches.
+
+### Phase 3: Business logic (Hour 3)
+
+- [ ] **TODO by User** Map size charts to categories (dresses, shoes).
+- [ ] **TODO by User** Enable mobile bottom menu (home/search/wishlist/cart).
+- [ ] **TODO by User** Configure Back In Stock double opt-in (GDPR).
+
+### Phase 4: Monitoring and handover (Hour 4)
+
+- [ ] **TODO by User** Deploy Uptime Kuma (separate box or Docker).
+- [ ] **TODO by User** Configure SSL/HTTP checks + Slack/Telegram alerts.
+- [ ] **TODO by User** Connect FreeScout to business SMTP email.
+- [ ] **TODO by User** Run Advanced Database Cleaner to purge demo transients.
+
+## Senior Infrastructure and Business Analyst review
+
+### Readiness gates
+
+- **Security gate**: SSH policy approved, UFW + Fail2Ban active.
+- **Performance gate**: FastCGI + Redis enabled; homepage loads < 2s.
+- **Reliability gate**: External uptime checks with notifications in < 60s.
+- **Compliance gate**: SSL active, backups scheduled, admin access audited.
+
+### Known manual dependencies
+
+- Premium plugin uploads (Blonwe Core, Slider Revolution).
+- Uptime Kuma monitoring (external host).
+- Support desk (FreeScout or osTicket).
+- Fashion template import + business data onboarding.
