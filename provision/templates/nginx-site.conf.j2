@@ -1,0 +1,31 @@
+server {
+    listen 80;
+    server_name {{ site_server_name }};
+
+    root {{ site_root }};
+    index index.php index.html;
+
+    access_log /var/log/nginx/fashion-store.access.log;
+    error_log /var/log/nginx/fashion-store.error.log;
+
+    client_max_body_size 64M;
+
+    location / {
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:{{ php_fpm_socket }};
+    }
+
+    location ~* \.(jpg|jpeg|png|gif|svg|ico|webp|css|js|woff|woff2|ttf|eot)$ {
+        expires 30d;
+        add_header Cache-Control "public";
+        try_files $uri $uri/ /index.php?$args;
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}

@@ -1,0 +1,30 @@
+---
+site_domain: "example.com"
+site_server_name: "example.com www.example.com"
+site_root: "/var/www/fashion-store"
+
+wp_site_url: "http://example.com"
+wp_site_title: "Winter Snow Fashion"
+wp_admin_user: "admin"
+wp_admin_password: "change-me"
+wp_admin_email: "admin@example.com"
+
+db_name: "fashion_store"
+db_user: "fashion_user"
+db_password: "change-me"
+
+php_version: "8.1"
+php_fpm_socket: "/run/php/php8.1-fpm.sock"
+
+wp_theme_slug: "astra"
+
+wp_plugins:
+  - woocommerce
+  - elementor
+  - starter-templates
+  - woo-variation-swatches
+  - back-in-stock-notifier-for-woocommerce
+
+wp_premium_plugins:
+  - blonwe-core
+  - slider-revolution
