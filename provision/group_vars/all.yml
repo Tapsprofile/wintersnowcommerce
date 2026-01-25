@@ -14,7 +14,28 @@ db_user: "fashion_user"
 db_password: "change-me"
 
 php_version: "8.1"
-php_fpm_socket: "/run/php/php8.1-fpm.sock"
+php_fpm_socket: "/run/php/php{{ php_version }}-fpm.sock"
+enable_ondrej_php_ppa: false
+
+enable_fastcgi_cache: true
+fastcgi_cache_path: "/var/cache/nginx/fastcgi_cache"
+fastcgi_cache_zone_name: "FASTCGI"
+fastcgi_cache_inactive: "60m"
+
+enable_redis: true
+
+enable_firewall: true
+ssh_port: 22
+enable_fail2ban: true
+
+enable_certbot: false
+certbot_email: "admin@example.com"
+certbot_domains:
+  - "example.com"
+  - "www.example.com"
+
+enable_netdata: false
+enable_goaccess: false
 
 wp_theme_slug: "astra"
 
@@ -24,6 +45,8 @@ wp_plugins:
   - starter-templates
   - woo-variation-swatches
   - back-in-stock-notifier-for-woocommerce
+wp_plugins_redis:
+  - redis-cache
 
 wp_premium_plugins:
   - blonwe-core
