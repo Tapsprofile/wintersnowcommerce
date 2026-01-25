@@ -1,0 +1,339 @@
+---
+- name: Provision fashion-ready WooCommerce store
+  hosts: local
+  become: true
+  vars:
+    base_packages:
+      - curl
+      - git
+      - unzip
+      - ca-certificates
+      - software-properties-common
+    web_packages:
+      - nginx
+    db_packages:
+      - mariadb-server
+      - mariadb-client
+    php_packages:
+      - "php{{ php_version }}-fpm"
+      - "php{{ php_version }}-cli"
+      - "php{{ php_version }}-mysql"
+      - "php{{ php_version }}-xml"
+      - "php{{ php_version }}-curl"
+      - "php{{ php_version }}-gd"
+      - "php{{ php_version }}-mbstring"
+      - "php{{ php_version }}-zip"
+      - "php{{ php_version }}-intl"
+      - "php{{ php_version }}-bcmath"
+      - "php{{ php_version }}-soap"
+      - "php{{ php_version }}-imagick"
+      - "php{{ php_version }}-redis"
+    redis_packages:
+      - redis-server
+    security_packages:
+      - ufw
+      - fail2ban
+    monitoring_packages:
+      - netdata
+      - goaccess
+    certbot_packages:
+      - certbot
+      - python3-certbot-nginx
+  tasks:
+    - name: Update apt cache
+      ansible.builtin.apt:
+        update_cache: true
+        cache_valid_time: 3600
+
+    - name: Add Ondrej PHP PPA (optional)
+      ansible.builtin.apt_repository:
+        repo: ppa:ondrej/php
+        update_cache: true
+      when: enable_ondrej_php_ppa
+
+    - name: Install base packages
+      ansible.builtin.apt:
+        name: "{{ base_packages }}"
+        state: present
+
+    - name: Install web packages
+      ansible.builtin.apt:
+        name: "{{ web_packages }}"
+        state: present
+
+    - name: Install database packages
+      ansible.builtin.apt:
+        name: "{{ db_packages }}"
+        state: present
+
+    - name: Install PHP packages
+      ansible.builtin.apt:
+        name: "{{ php_packages }}"
+        state: present
+
+    - name: Install Redis packages
+      ansible.builtin.apt:
+        name: "{{ redis_packages }}"
+        state: present
+      when: enable_redis
+
+    - name: Install security packages
+      ansible.builtin.apt:
+        name: "{{ security_packages }}"
+        state: present
+      when: enable_firewall or enable_fail2ban
+
+    - name: Install monitoring packages
+      ansible.builtin.apt:
+        name: "{{ monitoring_packages }}"
+        state: present
+      when: enable_netdata or enable_goaccess
+
+    - name: Install certbot packages
+      ansible.builtin.apt:
+        name: "{{ certbot_packages }}"
+        state: present
+      when: enable_certbot
+
+    - name: Ensure services are running
+      ansible.builtin.service:
+        name: "{{ item }}"
+        state: started
+        enabled: true
+      loop:
+        - nginx
+        - mariadb
+        - "php{{ php_version }}-fpm"
+
+    - name: Ensure Redis service is running
+      ansible.builtin.service:
+        name: redis-server
+        state: started
+        enabled: true
+      when: enable_redis
+
+    - name: Ensure Fail2Ban service is running
+      ansible.builtin.service:
+        name: fail2ban
+        state: started
+        enabled: true
+      when: enable_fail2ban
+
+    - name: Ensure Netdata service is running
+      ansible.builtin.service:
+        name: netdata
+        state: started
+        enabled: true
+      when: enable_netdata
+
+    - name: Ensure site root exists
+      ansible.builtin.file:
+        path: "{{ site_root }}"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: "0755"
+
+    - name: Install WP-CLI
+      ansible.builtin.get_url:
+        url: "https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar"
+        dest: /usr/local/bin/wp
+        mode: "0755"
+
+    - name: Ensure FastCGI cache path exists
+      ansible.builtin.file:
+        path: "{{ fastcgi_cache_path }}"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: "0755"
+      when: enable_fastcgi_cache
+
+    - name: Download WordPress core
+      ansible.builtin.command: wp core download --path={{ site_root }}
+      args:
+        creates: "{{ site_root }}/wp-settings.php"
+      become_user: www-data
+
+    - name: Create database and user
+      ansible.builtin.shell: |
+        mysql <<SQL
+        CREATE DATABASE IF NOT EXISTS `{{ db_name }}` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+        CREATE USER IF NOT EXISTS '{{ db_user }}'@'localhost' IDENTIFIED BY '{{ db_password }}';
+        GRANT ALL PRIVILEGES ON `{{ db_name }}`.* TO '{{ db_user }}'@'localhost';
+        FLUSH PRIVILEGES;
+        SQL
+      args:
+        executable: /bin/bash
+
+    - name: Create wp-config.php
+      ansible.builtin.command: >
+        wp config create
+        --path={{ site_root }}
+        --dbname={{ db_name }}
+        --dbuser={{ db_user }}
+        --dbpass={{ db_password }}
+        --dbhost=localhost
+        --skip-check
+      args:
+        creates: "{{ site_root }}/wp-config.php"
+      become_user: www-data
+
+    - name: Set WordPress config defaults
+      ansible.builtin.command: >
+        wp config set {{ item.key }} {{ item.value }}
+        --type=constant
+        --path={{ site_root }}
+      loop:
+        - { key: "FS_METHOD", value: "direct" }
+        - { key: "WP_MEMORY_LIMIT", value: "256M" }
+      become_user: www-data
+
+    - name: Set Redis config defaults
+      ansible.builtin.command: >
+        wp config set {{ item.key }} {{ item.value }}
+        --type=constant
+        --path={{ site_root }}
+      loop:
+        - { key: "WP_REDIS_HOST", value: "127.0.0.1" }
+        - { key: "WP_REDIS_PORT", value: "6379" }
+      when: enable_redis
+      become_user: www-data
+
+    - name: Check if WordPress is installed
+      ansible.builtin.command: wp core is-installed --path={{ site_root }}
+      register: wp_is_installed
+      ignore_errors: true
+      become_user: www-data
+
+    - name: Install WordPress
+      ansible.builtin.command: >
+        wp core install
+        --path={{ site_root }}
+        --url={{ wp_site_url }}
+        --title={{ wp_site_title }}
+        --admin_user={{ wp_admin_user }}
+        --admin_password={{ wp_admin_password }}
+        --admin_email={{ wp_admin_email }}
+      when: wp_is_installed.rc != 0
+      become_user: www-data
+
+    - name: Install and activate theme
+      ansible.builtin.command: >
+        wp theme install {{ wp_theme_slug }}
+        --activate
+        --force
+        --path={{ site_root }}
+      become_user: www-data
+
+    - name: Install and activate public plugins
+      ansible.builtin.command: >
+        wp plugin install {{ item }}
+        --activate
+        --force
+        --path={{ site_root }}
+      loop: "{{ wp_plugins }}"
+      when: wp_plugins | length > 0
+      become_user: www-data
+
+    - name: Install and activate Redis plugins
+      ansible.builtin.command: >
+        wp plugin install {{ item }}
+        --activate
+        --force
+        --path={{ site_root }}
+      loop: "{{ wp_plugins_redis }}"
+      when: enable_redis and (wp_plugins_redis | length > 0)
+      become_user: www-data
+
+    - name: Enable Redis object cache
+      ansible.builtin.command: wp redis enable --path={{ site_root }}
+      when: enable_redis
+      become_user: www-data
+
+    - name: Flag premium plugins for manual install
+      ansible.builtin.debug:
+        msg: "Install premium plugin manually: {{ item }}"
+      loop: "{{ wp_premium_plugins }}"
+      when: wp_premium_plugins | length > 0
+
+    - name: Write FastCGI cache config
+      ansible.builtin.template:
+        src: fastcgi-cache.conf.j2
+        dest: /etc/nginx/conf.d/fastcgi-cache.conf
+        mode: "0644"
+      when: enable_fastcgi_cache
+      notify: Reload nginx
+
+    - name: Remove FastCGI cache config when disabled
+      ansible.builtin.file:
+        path: /etc/nginx/conf.d/fastcgi-cache.conf
+        state: absent
+      when: not enable_fastcgi_cache
+      notify: Reload nginx
+
+    - name: Write nginx site config
+      ansible.builtin.template:
+        src: nginx-site.conf.j2
+        dest: /etc/nginx/sites-available/fashion-store.conf
+        mode: "0644"
+      notify: Reload nginx
+
+    - name: Enable nginx site
+      ansible.builtin.file:
+        src: /etc/nginx/sites-available/fashion-store.conf
+        dest: /etc/nginx/sites-enabled/fashion-store.conf
+        state: link
+      notify: Reload nginx
+
+    - name: Disable default nginx site
+      ansible.builtin.file:
+        path: /etc/nginx/sites-enabled/default
+        state: absent
+      notify: Reload nginx
+
+    - name: Configure Fail2Ban jail
+      ansible.builtin.template:
+        src: fail2ban-jail.local.j2
+        dest: /etc/fail2ban/jail.local
+        mode: "0644"
+      when: enable_fail2ban
+      notify: Restart fail2ban
+
+    - name: Configure UFW firewall
+      ansible.builtin.shell: |
+        ufw allow {{ ssh_port }}/tcp
+        ufw allow 80/tcp
+        ufw allow 443/tcp
+        ufw --force enable
+      args:
+        executable: /bin/bash
+      when: enable_firewall
+
+    - name: Request SSL certificate with Certbot
+      ansible.builtin.command: >
+        certbot --nginx -n --agree-tos
+        --email {{ certbot_email }}
+        {% for domain in certbot_domains %}-d {{ domain }} {% endfor %}
+      args:
+        creates: "/etc/letsencrypt/live/{{ certbot_domains[0] }}"
+      when: enable_certbot and (certbot_domains | length > 0)
+
+    - name: Ensure wp-content is writable
+      ansible.builtin.file:
+        path: "{{ site_root }}/wp-content"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: "0755"
+
+  handlers:
+    - name: Reload nginx
+      ansible.builtin.service:
+        name: nginx
+        state: reloaded
+
+    - name: Restart fail2ban
+      ansible.builtin.service:
+        name: fail2ban
+        state: restarted
