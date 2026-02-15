@@ -236,6 +236,29 @@
       when: wp_plugins | length > 0
       become_user: www-data
 
+    - name: Ensure custom storefront plugin directory exists
+      ansible.builtin.file:
+        path: "{{ site_root }}/wp-content/plugins/winter-snow-storefront"
+        state: directory
+        owner: www-data
+        group: www-data
+        mode: "0755"
+
+    - name: Deploy Winter Snow storefront plugin
+      ansible.builtin.copy:
+        src: ../files/winter-snow-storefront/
+        dest: "{{ site_root }}/wp-content/plugins/winter-snow-storefront/"
+        owner: www-data
+        group: www-data
+        mode: "0644"
+        directory_mode: "0755"
+
+    - name: Activate Winter Snow storefront plugin
+      ansible.builtin.command: >
+        wp plugin activate winter-snow-storefront
+        --path={{ site_root }}
+      become_user: www-data
+
     - name: Install and activate Redis plugins
       ansible.builtin.command: >
         wp plugin install {{ item }}

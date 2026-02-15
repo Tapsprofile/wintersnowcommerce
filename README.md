@@ -74,11 +74,40 @@ and risk management.
   (imagick, redis, mysql, xml, mbstring, zip, intl, bcmath, soap).
 - Installs WordPress + WooCommerce, Elementor, Variation Swatches,
   Back In Stock notifier, and SupportCandy.
+- Deploys and activates the custom **Winter Snow Storefront** plugin
+  (layered ecommerce header, offers section, product cards, and styled footer).
 - Configures Nginx vhost and optional FastCGI cache.
 - Installs and configures Redis object cache (optional).
 - Installs and configures UFW + Fail2Ban (optional).
 - Installs Netdata and GoAccess (optional).
 - Installs Certbot and can request SSL certificates (optional).
+
+### Custom storefront layout included
+
+The provisioning now deploys a local plugin from:
+
+```
+provision/files/winter-snow-storefront
+```
+
+Key UX and merchandising behaviors:
+
+- 4-layer header:
+  1. Flashing offer ticker
+  2. Utility strip (Order Tracking, language, currency message row)
+  3. Toggle menu + brand + product search + favorites/cart icons
+  4. "All Categories" row with primary navigation
+- Hero section with category rail + high-visibility collection CTA
+- "Deal of the Week" urgency block with countdown timer
+- Product grid rendering at least 10 designs for deep-scroll shopping
+- Automated data seed: 12 WooCommerce products and minimum 10 reviews per product
+- Footer structure matching newsletter/support + multi-column links pattern
+
+On activation, the plugin creates:
+
+- `Winter Snow Home` page with shortcode `[wss_storefront_homepage]`
+- `Order Tracking` page with shortcode `[woocommerce_order_tracking]`
+- Front page assignment to `Winter Snow Home`
 
 ### What is manual or recommended on a separate host
 
