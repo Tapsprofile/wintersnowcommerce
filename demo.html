@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WinterSnow Commerce - Feature Demo</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .demo-section {
+            margin: 3rem 0;
+            padding: 2rem;
+            background-color: var(--bg-color);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+        .demo-section h2 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        .demo-description {
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            opacity: 0.8;
+        }
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        .feature-card {
+            background-color: var(--bg-color);
+            border: 2px solid var(--border-color);
+            padding: 1.5rem;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .feature-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .header-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+        .header-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        .site-branding h1 {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+        .site-branding a {
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        .product-demo-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        .demo-product {
+            position: relative;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            background-color: var(--bg-color);
+        }
+        .demo-product-image {
+            width: 100%;
+            height: 300px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .demo-product-info {
+            padding: 1rem;
+        }
+        .demo-product-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        .demo-product-price {
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Floating Promo Bar -->
+    <div class="floating-promo-bar">
+        <span>🎉 Festive Sale Live!</span>
+        <span>Flat 20% OFF — Code: <span class="promo-bar-code">FESTIVE20</span></span>
+        <span>⏰ Limited Time Offer</span>
+    </div>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container">
+            <div class="header-content">
+                <div class="site-branding">
+                    <h1><a href="#">❄️ WinterSnow Commerce</a></h1>
+                </div>
+                
+                <div class="header-actions">
+                    <!-- Theme toggle will be inserted here by JS -->
+                    <!-- Search will be inserted here by JS -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="site-main">
+        <div class="container">
+            <h1 style="text-align: center; margin: 3rem 0;">WinterSnow Commerce Theme Demo</h1>
+            
+            <!-- Phase 1 Demo -->
+            <div class="demo-section">
+                <h2>Phase 1: Global Header Features</h2>
+                <p class="demo-description">
+                    The header includes a dark/light mode toggle, intelligent AJAX search, and mega menu support.
+                    Try toggling the theme using the button in the header!
+                </p>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌙</div>
+                        <div class="feature-title">Dark/Light Mode</div>
+                        <p>Automatic system detection with manual override. Preference saved in localStorage.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🔍</div>
+                        <div class="feature-title">AJAX Search</div>
+                        <p>Real-time product search showing images and prices. Debounced for performance.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-title">Mega Menu</div>
+                        <p>3-column dropdown with nested elements for organized category navigation.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 2 Demo -->
+            <div class="demo-section">
+                <h2>Phase 2: Festive & Offers Layer</h2>
+                <p class="demo-description">
+                    Drive conversions with psychological triggers like countdown timers and festive product highlights.
+                </p>
+                
+                <!-- Countdown Timer -->
+                <div class="countdown-timer" data-title="Festive Sale Ends In:" data-end-date="2026-12-31T23:59:59"></div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🎄</div>
+                        <div class="feature-title">Festive Tagging</div>
+                        <p>Custom taxonomy for festive products with visual badges on product cards.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⏱️</div>
+                        <div class="feature-title">Countdown Timer</div>
+                        <p>Live countdown to create urgency. Updates every second.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎊</div>
+                        <div class="feature-title">Promo Bar</div>
+                        <p>Sticky promotional bar with coupon code. Dismissible with memory.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Festive Products Grid Demo -->
+            <div class="demo-section">
+                <h3>Festive Products</h3>
+                <div class="product-demo-grid">
+                    <div class="demo-product festive-product-card">
+                        <span class="festive-badge">🎄 Special Offer</span>
+                        <div class="demo-product-image">🎁</div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Winter Wonderland Gift Set</div>
+                            <div class="demo-product-price">$49.99</div>
+                        </div>
+                    </div>
+                    <div class="demo-product festive-product-card">
+                        <span class="festive-badge">🎄 Special Offer</span>
+                        <div class="demo-product-image">❄️</div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Snowflake Collection</div>
+                            <div class="demo-product-price">$39.99</div>
+                        </div>
+                    </div>
+                    <div class="demo-product festive-product-card">
+                        <span class="festive-badge">🎄 Special Offer</span>
+                        <div class="demo-product-image">🎅</div>
+                        <div class="demo-product-info">
+                            <div class="demo-product-title">Holiday Special Bundle</div>
+                            <div class="demo-product-price">$59.99</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 3 Demo -->
+            <div class="demo-section">
+                <h2>Phase 3: High-Conversion Product Page</h2>
+                <p class="demo-description">
+                    Remove purchase friction with clear pricing, offer displays, and instant size guide access.
+                </p>
+
+                <div class="product-price-section">
+                    <div class="product-price">$49.99</div>
+                    <ul class="product-offers">
+                        <li data-icon="💰">Save 10% on Bulk Buy (5+ items)</li>
+                        <li data-icon="🚚">Free Delivery Today</li>
+                        <li data-icon="✅">30-Day Money Back Guarantee</li>
+                    </ul>
+                    <button class="size-guide-button" id="size-guide-trigger">📏 Size Guide</button>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">💰</div>
+                        <div class="feature-title">Price & Offers</div>
+                        <p>Prominent pricing with icon-based offer list. Shows bulk discounts and guarantees.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📏</div>
+                        <div class="feature-title">Size Guide Modal</div>
+                        <p>Instant popup without page reload. Keeps users on the product page.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">⭐</div>
+                        <div class="feature-title">Review Cards</div>
+                        <p>Modern card-style reviews with ratings. Clean, high-end brand aesthetic.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phase 4 Demo -->
+            <div class="demo-section">
+                <h2>Phase 4: Logistics & Retention</h2>
+                <p class="demo-description">
+                    Streamlined cart, orders, and checkout experience to reduce friction and increase trust.
+                </p>
+
+                <!-- Order Status Badges Demo -->
+                <div style="margin: 2rem 0;">
+                    <h3>Order Status Badges</h3>
+                    <div style="display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1rem;">
+                        <span class="order-status-badge status-processing">Processing</span>
+                        <span class="order-status-badge status-shipped">Shipped</span>
+                        <span class="order-status-badge status-delivered">Delivered</span>
+                        <span class="order-status-badge status-cancelled">Cancelled</span>
+                    </div>
+                </div>
+
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🛒</div>
+                        <div class="feature-title">Slide-Out Cart</div>
+                        <p>Mini cart with large checkout button. Opens automatically on add-to-cart.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📋</div>
+                        <div class="feature-title">Horizontal Tabs</div>
+                        <p>My Account with horizontal tabs. Clear status badges on mobile.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">✅</div>
+                        <div class="feature-title">2-Column Checkout</div>
+                        <p>Forms on left, sticky order summary on right. Simplified fields.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Installation Guide -->
+            <div class="demo-section">
+                <h2>🚀 Quick Start Guide</h2>
+                <div class="demo-description">
+                    <ol style="line-height: 2;">
+                        <li><strong>Upload Theme:</strong> Copy all files to <code>wp-content/themes/wintersnow-commerce/</code></li>
+                        <li><strong>Activate:</strong> Go to Appearance > Themes and activate WinterSnow Commerce</li>
+                        <li><strong>Install Plugins:</strong> WooCommerce, Elementor, Unlimited Elements</li>
+                        <li><strong>Configure:</strong> Use Theme Builder in Elementor to customize templates</li>
+                        <li><strong>Tag Products:</strong> Add "Festive" tag to seasonal products</li>
+                        <li><strong>Test:</strong> Verify all features using the QA checklist in README.md</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- QA Checklist -->
+            <div class="demo-section">
+                <h2>✅ Quality Assurance Checklist</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">🌓</div>
+                        <div class="feature-title">Dark Mode</div>
+                        <p>✓ Search bar background changes correctly in dark mode</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📐</div>
+                        <div class="feature-title">Size Guide</div>
+                        <p>✓ Popup opens instantly without page reload</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">🎁</div>
+                        <div class="feature-title">Festive Grid</div>
+                        <p>✓ Special offer badges visible on product images</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">📱</div>
+                        <div class="feature-title">Mobile Orders</div>
+                        <p>✓ My Orders clearly visible on mobile devices</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Size Guide Modal -->
+    <div class="modal-overlay" id="size-guide-modal">
+        <div class="modal-content">
+            <button class="modal-close" id="modal-close">&times;</button>
+            <h2>Size Guide</h2>
+            <table class="size-guide-table">
+                <thead>
+                    <tr>
+                        <th>Size</th>
+                        <th>Chest (inches)</th>
+                        <th>Waist (inches)</th>
+                        <th>Length (inches)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>XS</td><td>32-34</td><td>26-28</td><td>26</td></tr>
+                    <tr><td>S</td><td>35-37</td><td>29-31</td><td>27</td></tr>
+                    <tr><td>M</td><td>38-40</td><td>32-34</td><td>28</td></tr>
+                    <tr><td>L</td><td>41-43</td><td>35-37</td><td>29</td></tr>
+                    <tr><td>XL</td><td>44-46</td><td>38-40</td><td>30</td></tr>
+                    <tr><td>XXL</td><td>47-49</td><td>41-43</td><td>31</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer" style="margin-top: 5rem; padding: 3rem 0; background-color: var(--bg-color); border-top: 1px solid var(--border-color);">
+        <div class="container">
+            <div style="text-align: center;">
+                <p style="margin-bottom: 1rem;">
+                    <strong>WinterSnow Commerce</strong> - A high-conversion WooCommerce theme
+                </p>
+                <p style="opacity: 0.7;">
+                    Built with ❤️ for amazing e-commerce experiences
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/dark-mode.js"></script>
+    <script src="js/countdown.js"></script>
+    <script src="js/product-page.js"></script>
+</body>
+</html>
