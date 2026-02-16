@@ -17,6 +17,11 @@
      * Initialize AJAX search functionality
      */
     function initAjaxSearch() {
+        // Check if AJAX vars are available
+        if (typeof wintersnowAjax === 'undefined') {
+            return;
+        }
+        
         // Create search container if it doesn't exist
         const searchContainer = createSearchContainer();
         

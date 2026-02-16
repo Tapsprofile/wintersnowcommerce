@@ -32,9 +32,9 @@ get_header();
                 <button class="account-tab" data-tab="account-details">
                     <?php _e('Account Details', 'wintersnow-commerce'); ?>
                 </button>
-                <button class="account-tab" data-tab="logout">
+                <a href="<?php echo esc_url(wc_logout_url()); ?>" class="account-tab">
                     <?php _e('Logout', 'wintersnow-commerce'); ?>
-                </button>
+                </a>
             </div>
             
             <div class="account-content">

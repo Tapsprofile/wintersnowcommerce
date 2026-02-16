@@ -106,12 +106,13 @@
     }
     
     /**
-     * Smooth scroll for anchor links
+     * Smooth scroll for anchor links (excluding tabs and modals)
      */
-    $('a[href^="#"]').on('click', function(e) {
+    $('a[href^="#"]:not(.account-tab):not([data-tab])').on('click', function(e) {
         const target = $(this.hash);
         
-        if (target.length) {
+        // Only smooth scroll if target exists and is not a tab content
+        if (target.length && !target.hasClass('account-tab-content')) {
             e.preventDefault();
             
             $('html, body').animate({
