@@ -1,0 +1,209 @@
+{
+  "cart_checkout_template": {
+    "name": "WinterSnow Cart & Checkout",
+    "type": "cart_checkout",
+    "description": "Slide-out cart and 2-column checkout layout",
+    "mini_cart": {
+      "enabled": true,
+      "type": "slide_out",
+      "position": "right",
+      "trigger": "cart_icon_click",
+      "settings": {
+        "show_product_images": true,
+        "show_product_quantity": true,
+        "show_product_price": true,
+        "show_remove_button": true,
+        "show_subtotal": true,
+        "show_checkout_button": true,
+        "show_view_cart_button": true,
+        "checkout_button_prominence": "primary",
+        "checkout_button_size": "large",
+        "view_cart_button_prominence": "secondary",
+        "view_cart_button_size": "medium",
+        "empty_cart_message": "Your cart is empty",
+        "empty_cart_button_text": "Continue Shopping",
+        "empty_cart_button_link": "/shop"
+      },
+      "styling": {
+        "width": "400px",
+        "max_width": "90vw",
+        "background": "#ffffff",
+        "overlay_color": "rgba(0,0,0,0.5)",
+        "slide_animation": "slide_in_right",
+        "animation_duration": "300ms"
+      }
+    },
+    "cart_page": {
+      "layout": "full_width",
+      "sections": [
+        {
+          "section_id": "cart_table",
+          "widgets": [
+            {
+              "widget_type": "cart_table",
+              "settings": {
+                "show_product_image": true,
+                "show_product_name": true,
+                "show_product_price": true,
+                "show_quantity_selector": true,
+                "show_product_total": true,
+                "show_remove_button": true,
+                "update_cart_automatically": false,
+                "show_update_cart_button": true
+              }
+            }
+          ]
+        },
+        {
+          "section_id": "cart_totals",
+          "widgets": [
+            {
+              "widget_type": "cart_totals",
+              "settings": {
+                "show_subtotal": true,
+                "show_shipping": true,
+                "show_tax": true,
+                "show_total": true,
+                "show_coupon_form": true,
+                "proceed_to_checkout_text": "Proceed to Checkout",
+                "button_size": "large",
+                "button_style": "primary"
+              }
+            }
+          ]
+        },
+        {
+          "section_id": "continue_shopping",
+          "widgets": [
+            {
+              "widget_type": "button",
+              "settings": {
+                "text": "Continue Shopping",
+                "link": "/shop",
+                "style": "outline",
+                "size": "medium"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "checkout_page": {
+      "layout": "two_column",
+      "column_ratio": "60:40",
+      "sections": [
+        {
+          "column": "left",
+          "section_id": "checkout_form",
+          "sticky": false,
+          "widgets": [
+            {
+              "widget_type": "checkout_billing",
+              "settings": {
+                "title": "Billing Details",
+                "fields": [
+                  "first_name",
+                  "last_name",
+                  "email",
+                  "phone",
+                  "address_1",
+                  "city",
+                  "state",
+                  "postcode",
+                  "country"
+                ],
+                "field_layout": "two_column",
+                "remove_optional_fields": true,
+                "simplified_fields": true
+              }
+            },
+            {
+              "widget_type": "checkout_shipping",
+              "settings": {
+                "title": "Shipping Details",
+                "ship_to_different_address": true,
+                "default_checked": false
+              }
+            },
+            {
+              "widget_type": "checkout_payment",
+              "settings": {
+                "title": "Payment Method",
+                "available_methods": [
+                  "credit_card",
+                  "paypal",
+                  "bank_transfer"
+                ],
+                "show_payment_icons": true,
+                "show_secure_badge": true
+              }
+            }
+          ]
+        },
+        {
+          "column": "right",
+          "section_id": "order_summary",
+          "sticky": true,
+          "widgets": [
+            {
+              "widget_type": "checkout_order_summary",
+              "settings": {
+                "title": "Order Summary",
+                "show_product_images": true,
+                "show_product_quantity": true,
+                "show_product_price": true,
+                "show_subtotal": true,
+                "show_shipping": true,
+                "show_tax": true,
+                "show_total": true,
+                "total_prominence": "highlight",
+                "show_coupon_form": true,
+                "coupon_placeholder": "Enter promo code",
+                "sticky_position": "top",
+                "sticky_offset": "20px"
+              },
+              "styling": {
+                "background": "#f9f9f9",
+                "border": "1px solid #e0e0e0",
+                "border_radius": "8px",
+                "padding": "30px",
+                "box_shadow": "0 2px 8px rgba(0,0,0,0.05)"
+              }
+            },
+            {
+              "widget_type": "trust_badges",
+              "settings": {
+                "badges": [
+                  {
+                    "icon": "🔒",
+                    "text": "Secure Checkout"
+                  },
+                  {
+                    "icon": "✓",
+                    "text": "SSL Encrypted"
+                  },
+                  {
+                    "icon": "🚚",
+                    "text": "Free Shipping Over $100"
+                  }
+                ],
+                "alignment": "center"
+              }
+            }
+          ]
+        }
+      ],
+      "responsive_settings": {
+        "mobile": {
+          "layout": "single_column",
+          "order_summary_position": "top",
+          "sticky_disabled": true
+        },
+        "tablet": {
+          "layout": "single_column",
+          "sticky_disabled": true
+        }
+      }
+    }
+  }
+}

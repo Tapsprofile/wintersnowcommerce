@@ -1,0 +1,320 @@
+{
+  "homepage_template": {
+    "name": "WinterSnow Homepage",
+    "type": "page",
+    "description": "Homepage with festive highlights, countdown timer, and promotional banners",
+    "sections": [
+      {
+        "section_id": "hero_banner",
+        "type": "hero",
+        "widgets": [
+          {
+            "widget_type": "hero_slider",
+            "settings": {
+              "slides": [
+                {
+                  "background_image": "hero-winter-collection.jpg",
+                  "heading": "Winter Collection 2024",
+                  "subheading": "Stay Warm in Style",
+                  "button_text": "Shop Now",
+                  "button_link": "/shop",
+                  "overlay_opacity": "0.3"
+                },
+                {
+                  "background_image": "hero-festive-sale.jpg",
+                  "heading": "Festive Sale - Up to 20% OFF",
+                  "subheading": "Limited Time Offer",
+                  "button_text": "Shop Festive",
+                  "button_link": "/product-tag/festive",
+                  "overlay_opacity": "0.4"
+                },
+                {
+                  "background_image": "hero-new-arrivals.jpg",
+                  "heading": "New Arrivals",
+                  "subheading": "Fresh Styles for the Season",
+                  "button_text": "Discover New",
+                  "button_link": "/new-arrivals",
+                  "overlay_opacity": "0.3"
+                }
+              ],
+              "autoplay": true,
+              "autoplay_speed": "5000",
+              "transition": "fade",
+              "show_arrows": true,
+              "show_dots": true
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "festive_countdown",
+        "type": "countdown",
+        "widgets": [
+          {
+            "widget_type": "heading",
+            "settings": {
+              "text": "🎄 Festive Sale Ends Soon!",
+              "html_tag": "h2",
+              "alignment": "center",
+              "font_size": "36px"
+            }
+          },
+          {
+            "widget_type": "countdown_timer",
+            "plugin_required": "Elementor Pro",
+            "settings": {
+              "countdown_type": "fixed",
+              "due_date": "2024-12-31 23:59:59",
+              "show_labels": true,
+              "labels": {
+                "days": "Days",
+                "hours": "Hours",
+                "minutes": "Minutes",
+                "seconds": "Seconds"
+              },
+              "style": "modern",
+              "digit_background": "#d32f2f",
+              "digit_text_color": "#ffffff",
+              "label_color": "#333333",
+              "separator": ":",
+              "alignment": "center"
+            }
+          }
+        ],
+        "styling": {
+          "background": "linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%)",
+          "padding": "60px 20px"
+        }
+      },
+      {
+        "section_id": "festive_products",
+        "type": "product_grid",
+        "widgets": [
+          {
+            "widget_type": "heading",
+            "settings": {
+              "text": "Festive Highlights",
+              "html_tag": "h2",
+              "alignment": "center",
+              "font_size": "32px",
+              "margin_bottom": "40px"
+            }
+          },
+          {
+            "widget_type": "loop_grid",
+            "plugin_required": "Elementor Pro",
+            "settings": {
+              "source": "woocommerce_products",
+              "query": {
+                "post_type": "product",
+                "include_by": "terms",
+                "terms": ["Festive"],
+                "term_taxonomy": "product_tag",
+                "posts_per_page": 6,
+                "order_by": "date",
+                "order": "DESC"
+              },
+              "layout": {
+                "columns": 3,
+                "columns_tablet": 2,
+                "columns_mobile": 1,
+                "gap": "30px"
+              },
+              "product_card": {
+                "show_image": true,
+                "show_badge": true,
+                "badge_text": "FESTIVE SPECIAL",
+                "badge_background": "#d32f2f",
+                "badge_position": "top_left",
+                "show_title": true,
+                "show_price": true,
+                "show_rating": true,
+                "show_add_to_cart": true,
+                "hover_effect": "zoom",
+                "card_shadow": "0 4px 8px rgba(0,0,0,0.1)"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "featured_categories",
+        "type": "categories",
+        "widgets": [
+          {
+            "widget_type": "heading",
+            "settings": {
+              "text": "Shop by Category",
+              "html_tag": "h2",
+              "alignment": "center",
+              "font_size": "32px"
+            }
+          },
+          {
+            "widget_type": "category_grid",
+            "settings": {
+              "categories": [
+                {
+                  "name": "Outerwear",
+                  "slug": "outerwear",
+                  "image": "category-outerwear.jpg",
+                  "count": "3 products"
+                },
+                {
+                  "name": "Sweaters",
+                  "slug": "sweaters",
+                  "image": "category-sweaters.jpg",
+                  "count": "2 products"
+                },
+                {
+                  "name": "Bottoms",
+                  "slug": "bottoms",
+                  "image": "category-bottoms.jpg",
+                  "count": "1 product"
+                },
+                {
+                  "name": "Dresses",
+                  "slug": "dresses",
+                  "image": "category-dresses.jpg",
+                  "count": "1 product"
+                },
+                {
+                  "name": "Accessories",
+                  "slug": "accessories",
+                  "image": "category-accessories.jpg",
+                  "count": "1 product"
+                },
+                {
+                  "name": "Footwear",
+                  "slug": "footwear",
+                  "image": "category-footwear.jpg",
+                  "count": "1 product"
+                }
+              ],
+              "columns": 3,
+              "show_count": true,
+              "hover_effect": "overlay"
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "new_arrivals",
+        "type": "product_grid",
+        "widgets": [
+          {
+            "widget_type": "heading",
+            "settings": {
+              "text": "New In",
+              "html_tag": "h2",
+              "alignment": "center",
+              "font_size": "32px"
+            }
+          },
+          {
+            "widget_type": "products",
+            "settings": {
+              "query": {
+                "post_type": "product",
+                "posts_per_page": 4,
+                "order_by": "date",
+                "order": "DESC"
+              },
+              "columns": 4,
+              "show_rating": true,
+              "show_price": true,
+              "show_add_to_cart": true
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "testimonials",
+        "type": "testimonials",
+        "widgets": [
+          {
+            "widget_type": "heading",
+            "settings": {
+              "text": "What Our Customers Say",
+              "html_tag": "h2",
+              "alignment": "center",
+              "font_size": "32px"
+            }
+          },
+          {
+            "widget_type": "testimonial_carousel",
+            "settings": {
+              "testimonials": [
+                {
+                  "content": "Absolutely love my Winter Wool Coat! The quality is outstanding and it keeps me so warm. Worth every penny!",
+                  "author": "Sarah Johnson",
+                  "rating": 5,
+                  "image": "customer-1.jpg"
+                },
+                {
+                  "content": "The Cashmere Sweater is incredibly soft and luxurious. I've received so many compliments!",
+                  "author": "Jennifer Lee",
+                  "rating": 5,
+                  "image": "customer-2.jpg"
+                },
+                {
+                  "content": "Great shopping experience! Fast shipping and the products are exactly as described.",
+                  "author": "Michael Chen",
+                  "rating": 5,
+                  "image": "customer-3.jpg"
+                }
+              ],
+              "autoplay": true,
+              "autoplay_speed": "5000",
+              "show_arrows": true,
+              "show_dots": true
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "newsletter",
+        "type": "newsletter",
+        "widgets": [
+          {
+            "widget_type": "heading",
+            "settings": {
+              "text": "Stay Updated",
+              "html_tag": "h2",
+              "alignment": "center",
+              "font_size": "32px",
+              "color": "#ffffff"
+            }
+          },
+          {
+            "widget_type": "text",
+            "settings": {
+              "text": "Subscribe to our newsletter for exclusive offers and updates",
+              "alignment": "center",
+              "color": "#ffffff"
+            }
+          },
+          {
+            "widget_type": "form",
+            "settings": {
+              "fields": [
+                {
+                  "type": "email",
+                  "placeholder": "Enter your email",
+                  "required": true
+                }
+              ],
+              "button_text": "Subscribe",
+              "button_style": "light",
+              "form_layout": "inline"
+            }
+          }
+        ],
+        "styling": {
+          "background": "linear-gradient(135deg, #667eea 0%, #764ba2 100%)",
+          "padding": "80px 20px"
+        }
+      }
+    ]
+  }
+}

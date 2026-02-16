@@ -1,0 +1,384 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Winter Wool Coat",
+      "slug": "winter-wool-coat",
+      "description": "Premium wool blend coat designed to keep you warm during the coldest winter days. Features a classic tailored fit with modern styling. Made from 80% wool and 20% polyester for durability and warmth.",
+      "short_description": "Premium wool blend coat for ultimate winter warmth",
+      "price": "249.99",
+      "regular_price": "299.99",
+      "sale_price": "249.99",
+      "sku": "WWC-001",
+      "stock_status": "instock",
+      "stock_quantity": 50,
+      "categories": ["Outerwear", "Winter Collection"],
+      "tags": ["Winter", "Coat", "Premium"],
+      "images": [
+        "placeholder-wool-coat-1.jpg",
+        "placeholder-wool-coat-2.jpg",
+        "placeholder-wool-coat-3.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Charcoal", "Navy", "Camel"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "XS", "color": "Charcoal", "sku": "WWC-001-XS-CH", "stock": 5},
+        {"size": "S", "color": "Charcoal", "sku": "WWC-001-S-CH", "stock": 8},
+        {"size": "M", "color": "Charcoal", "sku": "WWC-001-M-CH", "stock": 10},
+        {"size": "L", "color": "Charcoal", "sku": "WWC-001-L-CH", "stock": 10},
+        {"size": "XL", "color": "Charcoal", "sku": "WWC-001-XL-CH", "stock": 8},
+        {"size": "XXL", "color": "Charcoal", "sku": "WWC-001-XXL-CH", "stock": 5}
+      ],
+      "size_guide_type": "outerwear"
+    },
+    {
+      "id": 2,
+      "name": "Cashmere Sweater",
+      "slug": "cashmere-sweater",
+      "description": "Indulge in luxury with our 100% pure cashmere pullover sweater. Incredibly soft and warm, this timeless piece features a classic crew neck design that pairs perfectly with any outfit. Hand-sourced from the finest Mongolian cashmere.",
+      "short_description": "100% pure cashmere luxury pullover",
+      "price": "189.99",
+      "regular_price": "189.99",
+      "sale_price": null,
+      "sku": "CS-002",
+      "stock_status": "instock",
+      "stock_quantity": 40,
+      "categories": ["Sweaters", "Luxury Collection"],
+      "tags": ["Cashmere", "Premium", "Winter"],
+      "images": [
+        "placeholder-cashmere-1.jpg",
+        "placeholder-cashmere-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Beige", "Gray", "Black"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "S", "color": "Beige", "sku": "CS-002-S-BG", "stock": 8},
+        {"size": "M", "color": "Beige", "sku": "CS-002-M-BG", "stock": 10},
+        {"size": "L", "color": "Beige", "sku": "CS-002-L-BG", "stock": 8},
+        {"size": "XL", "color": "Beige", "sku": "CS-002-XL-BG", "stock": 6}
+      ],
+      "size_guide_type": "tops"
+    },
+    {
+      "id": 3,
+      "name": "Denim Jeans",
+      "slug": "denim-jeans",
+      "description": "Classic fit denim jeans made from premium quality denim with just the right amount of stretch. Features a timeless 5-pocket design, durable construction, and a comfortable mid-rise fit. Perfect for everyday wear.",
+      "short_description": "Classic fit premium denim jeans",
+      "price": "79.99",
+      "regular_price": "89.99",
+      "sale_price": "79.99",
+      "sku": "DJ-003",
+      "stock_status": "instock",
+      "stock_quantity": 100,
+      "categories": ["Bottoms", "Denim"],
+      "tags": ["Jeans", "Denim", "Classic"],
+      "images": [
+        "placeholder-jeans-1.jpg",
+        "placeholder-jeans-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "wash": {
+          "name": "Wash",
+          "options": ["Light Blue", "Dark Blue", "Black"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "S", "wash": "Light Blue", "sku": "DJ-003-S-LB", "stock": 15},
+        {"size": "M", "wash": "Light Blue", "sku": "DJ-003-M-LB", "stock": 20},
+        {"size": "L", "wash": "Light Blue", "sku": "DJ-003-L-LB", "stock": 20},
+        {"size": "XL", "wash": "Light Blue", "sku": "DJ-003-XL-LB", "stock": 15}
+      ],
+      "size_guide_type": "bottoms"
+    },
+    {
+      "id": 4,
+      "name": "Festive Party Dress",
+      "slug": "festive-party-dress",
+      "description": "Make a statement this holiday season with our stunning evening dress. Features elegant draping, a flattering silhouette, and luxurious fabric with a subtle shimmer. Perfect for holiday parties, New Year's celebrations, and special occasions.",
+      "short_description": "Holiday special evening dress with elegant draping",
+      "price": "159.99",
+      "regular_price": "199.99",
+      "sale_price": "159.99",
+      "sku": "FPD-004",
+      "stock_status": "instock",
+      "stock_quantity": 30,
+      "categories": ["Dresses", "Festive Collection"],
+      "tags": ["Festive", "Party", "Holiday", "Evening Wear"],
+      "images": [
+        "placeholder-dress-1.jpg",
+        "placeholder-dress-2.jpg",
+        "placeholder-dress-3.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Burgundy", "Emerald", "Navy"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "XS", "color": "Burgundy", "sku": "FPD-004-XS-BU", "stock": 5},
+        {"size": "S", "color": "Burgundy", "sku": "FPD-004-S-BU", "stock": 8},
+        {"size": "M", "color": "Burgundy", "sku": "FPD-004-M-BU", "stock": 8},
+        {"size": "L", "color": "Burgundy", "sku": "FPD-004-L-BU", "stock": 5}
+      ],
+      "size_guide_type": "dresses"
+    },
+    {
+      "id": 5,
+      "name": "Leather Jacket",
+      "slug": "leather-jacket",
+      "description": "Genuine leather biker jacket with classic asymmetric zip design. Crafted from premium full-grain leather that gets better with age. Features multiple pockets, adjustable waist belts, and quilted shoulder detail. A timeless wardrobe essential.",
+      "short_description": "Genuine leather biker jacket with classic design",
+      "price": "349.99",
+      "regular_price": "399.99",
+      "sale_price": "349.99",
+      "sku": "LJ-005",
+      "stock_status": "instock",
+      "stock_quantity": 25,
+      "categories": ["Outerwear", "Jackets"],
+      "tags": ["Leather", "Biker", "Premium"],
+      "images": [
+        "placeholder-leather-jacket-1.jpg",
+        "placeholder-leather-jacket-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Black", "Brown"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "S", "color": "Black", "sku": "LJ-005-S-BK", "stock": 5},
+        {"size": "M", "color": "Black", "sku": "LJ-005-M-BK", "stock": 8},
+        {"size": "L", "color": "Black", "sku": "LJ-005-L-BK", "stock": 6},
+        {"size": "XL", "color": "Black", "sku": "LJ-005-XL-BK", "stock": 4}
+      ],
+      "size_guide_type": "outerwear"
+    },
+    {
+      "id": 6,
+      "name": "Cotton T-Shirt",
+      "slug": "cotton-t-shirt",
+      "description": "Essential basic crew neck tee made from 100% premium cotton. Soft, breathable, and comfortable for all-day wear. Features a classic fit and reinforced seams for durability. Available in versatile colors to mix and match with any outfit.",
+      "short_description": "Basic crew neck tee in premium cotton",
+      "price": "24.99",
+      "regular_price": "29.99",
+      "sale_price": "24.99",
+      "sku": "CT-006",
+      "stock_status": "instock",
+      "stock_quantity": 150,
+      "categories": ["T-Shirts", "Basics"],
+      "tags": ["Cotton", "Basic", "Everyday"],
+      "images": [
+        "placeholder-tshirt-1.jpg",
+        "placeholder-tshirt-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["White", "Black", "Gray", "Navy"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "S", "color": "White", "sku": "CT-006-S-WH", "stock": 25},
+        {"size": "M", "color": "White", "sku": "CT-006-M-WH", "stock": 30},
+        {"size": "L", "color": "White", "sku": "CT-006-L-WH", "stock": 25},
+        {"size": "XL", "color": "White", "sku": "CT-006-XL-WH", "stock": 20}
+      ],
+      "size_guide_type": "tops"
+    },
+    {
+      "id": 7,
+      "name": "Wool Scarf",
+      "slug": "wool-scarf",
+      "description": "Luxurious wool scarf perfect for winter accessories. Made from soft merino wool with a beautiful woven pattern. Extra long for versatile styling options. Adds both warmth and style to any winter outfit.",
+      "short_description": "Winter merino wool scarf with woven pattern",
+      "price": "49.99",
+      "regular_price": "59.99",
+      "sale_price": "49.99",
+      "sku": "WS-007",
+      "stock_status": "instock",
+      "stock_quantity": 80,
+      "categories": ["Accessories", "Winter Collection"],
+      "tags": ["Festive", "Scarf", "Winter", "Accessories"],
+      "images": [
+        "placeholder-scarf-1.jpg",
+        "placeholder-scarf-2.jpg"
+      ],
+      "attributes": {
+        "color": {
+          "name": "Color",
+          "options": ["Red Plaid", "Gray", "Cream", "Navy"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"color": "Red Plaid", "sku": "WS-007-RP", "stock": 25},
+        {"color": "Gray", "sku": "WS-007-GR", "stock": 20},
+        {"color": "Cream", "sku": "WS-007-CR", "stock": 20},
+        {"color": "Navy", "sku": "WS-007-NV", "stock": 15}
+      ],
+      "size_guide_type": "accessories"
+    },
+    {
+      "id": 8,
+      "name": "Fleece Hoodie",
+      "slug": "fleece-hoodie",
+      "description": "Comfortable everyday hoodie made from premium fleece fabric. Features a soft brushed interior, adjustable drawstring hood, and kangaroo pocket. Perfect for layering or wearing on its own during casual days.",
+      "short_description": "Comfortable everyday fleece hoodie",
+      "price": "59.99",
+      "regular_price": "69.99",
+      "sale_price": "59.99",
+      "sku": "FH-008",
+      "stock_status": "instock",
+      "stock_quantity": 90,
+      "categories": ["Hoodies", "Casualwear"],
+      "tags": ["Fleece", "Hoodie", "Casual"],
+      "images": [
+        "placeholder-hoodie-1.jpg",
+        "placeholder-hoodie-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Gray", "Black", "Navy", "Burgundy"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "S", "color": "Gray", "sku": "FH-008-S-GR", "stock": 15},
+        {"size": "M", "color": "Gray", "sku": "FH-008-M-GR", "stock": 20},
+        {"size": "L", "color": "Gray", "sku": "FH-008-L-GR", "stock": 18},
+        {"size": "XL", "color": "Gray", "sku": "FH-008-XL-GR", "stock": 12}
+      ],
+      "size_guide_type": "tops"
+    },
+    {
+      "id": 9,
+      "name": "Formal Blazer",
+      "slug": "formal-blazer",
+      "description": "Business casual blazer crafted from premium wool-blend fabric. Features a modern slim fit, notch lapels, and two-button closure. Fully lined with functional pockets. Perfect for the office, interviews, or formal events.",
+      "short_description": "Business casual wool-blend blazer",
+      "price": "199.99",
+      "regular_price": "249.99",
+      "sale_price": "199.99",
+      "sku": "FB-009",
+      "stock_status": "instock",
+      "stock_quantity": 35,
+      "categories": ["Blazers", "Formal Wear"],
+      "tags": ["Blazer", "Formal", "Business"],
+      "images": [
+        "placeholder-blazer-1.jpg",
+        "placeholder-blazer-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["XS", "S", "M", "L", "XL", "XXL"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Navy", "Charcoal", "Black"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "S", "color": "Navy", "sku": "FB-009-S-NV", "stock": 6},
+        {"size": "M", "color": "Navy", "sku": "FB-009-M-NV", "stock": 10},
+        {"size": "L", "color": "Navy", "sku": "FB-009-L-NV", "stock": 8},
+        {"size": "XL", "color": "Navy", "sku": "FB-009-XL-NV", "stock": 5}
+      ],
+      "size_guide_type": "outerwear"
+    },
+    {
+      "id": 10,
+      "name": "Winter Boots",
+      "slug": "winter-boots",
+      "description": "Insulated winter footwear designed to keep your feet warm and dry in harsh conditions. Features waterproof construction, thermal insulation, anti-slip rubber sole, and faux fur lining. Perfect for snow and cold weather.",
+      "short_description": "Insulated waterproof winter footwear",
+      "price": "129.99",
+      "regular_price": "159.99",
+      "sale_price": "129.99",
+      "sku": "WB-010",
+      "stock_status": "instock",
+      "stock_quantity": 60,
+      "categories": ["Footwear", "Winter Collection"],
+      "tags": ["Festive", "Boots", "Winter", "Waterproof"],
+      "images": [
+        "placeholder-boots-1.jpg",
+        "placeholder-boots-2.jpg"
+      ],
+      "attributes": {
+        "size": {
+          "name": "Size",
+          "options": ["6", "7", "8", "9", "10", "11", "12"],
+          "variation": true
+        },
+        "color": {
+          "name": "Color",
+          "options": ["Black", "Brown", "Tan"],
+          "variation": true
+        }
+      },
+      "variations": [
+        {"size": "7", "color": "Black", "sku": "WB-010-7-BK", "stock": 8},
+        {"size": "8", "color": "Black", "sku": "WB-010-8-BK", "stock": 10},
+        {"size": "9", "color": "Black", "sku": "WB-010-9-BK", "stock": 12},
+        {"size": "10", "color": "Black", "sku": "WB-010-10-BK", "stock": 10},
+        {"size": "11", "color": "Black", "sku": "WB-010-11-BK", "stock": 8}
+      ],
+      "size_guide_type": "footwear"
+    }
+  ]
+}

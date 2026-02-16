@@ -1,0 +1,345 @@
+{
+  "size_guides": {
+    "tops": {
+      "name": "Tops Size Guide (Sweaters, T-Shirts, Hoodies)",
+      "description": "Use this guide for all tops including sweaters, t-shirts, and hoodies",
+      "measurements": [
+        {
+          "size": "XS",
+          "chest_inches": "32-34",
+          "chest_cm": "81-86",
+          "waist_inches": "26-28",
+          "waist_cm": "66-71",
+          "length_inches": "26",
+          "length_cm": "66"
+        },
+        {
+          "size": "S",
+          "chest_inches": "34-36",
+          "chest_cm": "86-91",
+          "waist_inches": "28-30",
+          "waist_cm": "71-76",
+          "length_inches": "27",
+          "length_cm": "69"
+        },
+        {
+          "size": "M",
+          "chest_inches": "38-40",
+          "chest_cm": "97-102",
+          "waist_inches": "32-34",
+          "waist_cm": "81-86",
+          "length_inches": "28",
+          "length_cm": "71"
+        },
+        {
+          "size": "L",
+          "chest_inches": "42-44",
+          "chest_cm": "107-112",
+          "waist_inches": "36-38",
+          "waist_cm": "91-97",
+          "length_inches": "29",
+          "length_cm": "74"
+        },
+        {
+          "size": "XL",
+          "chest_inches": "46-48",
+          "chest_cm": "117-122",
+          "waist_inches": "40-42",
+          "waist_cm": "102-107",
+          "length_inches": "30",
+          "length_cm": "76"
+        },
+        {
+          "size": "XXL",
+          "chest_inches": "50-52",
+          "chest_cm": "127-132",
+          "waist_inches": "44-46",
+          "waist_cm": "112-117",
+          "length_inches": "31",
+          "length_cm": "79"
+        }
+      ],
+      "how_to_measure": [
+        "Chest: Measure around the fullest part of your chest, keeping the tape horizontal",
+        "Waist: Measure around your natural waistline",
+        "Length: Measure from the highest point of your shoulder to the hem"
+      ]
+    },
+    "bottoms": {
+      "name": "Bottoms Size Guide (Jeans, Pants)",
+      "description": "Use this guide for all bottoms including jeans and pants",
+      "measurements": [
+        {
+          "size": "XS",
+          "waist_inches": "26-28",
+          "waist_cm": "66-71",
+          "hips_inches": "34-36",
+          "hips_cm": "86-91",
+          "inseam_inches": "30",
+          "inseam_cm": "76"
+        },
+        {
+          "size": "S",
+          "waist_inches": "28-30",
+          "waist_cm": "71-76",
+          "hips_inches": "36-38",
+          "hips_cm": "91-97",
+          "inseam_inches": "30",
+          "inseam_cm": "76"
+        },
+        {
+          "size": "M",
+          "waist_inches": "32-34",
+          "waist_cm": "81-86",
+          "hips_inches": "40-42",
+          "hips_cm": "102-107",
+          "inseam_inches": "32",
+          "inseam_cm": "81"
+        },
+        {
+          "size": "L",
+          "waist_inches": "36-38",
+          "waist_cm": "91-97",
+          "hips_inches": "44-46",
+          "hips_cm": "112-117",
+          "inseam_inches": "32",
+          "inseam_cm": "81"
+        },
+        {
+          "size": "XL",
+          "waist_inches": "40-42",
+          "waist_cm": "102-107",
+          "hips_inches": "48-50",
+          "hips_cm": "122-127",
+          "inseam_inches": "32",
+          "inseam_cm": "81"
+        },
+        {
+          "size": "XXL",
+          "waist_inches": "44-46",
+          "waist_cm": "112-117",
+          "hips_inches": "52-54",
+          "hips_cm": "132-137",
+          "inseam_inches": "32",
+          "inseam_cm": "81"
+        }
+      ],
+      "how_to_measure": [
+        "Waist: Measure around your natural waistline",
+        "Hips: Measure around the fullest part of your hips",
+        "Inseam: Measure from the crotch to the bottom of the leg"
+      ]
+    },
+    "outerwear": {
+      "name": "Outerwear Size Guide (Coats, Jackets, Blazers)",
+      "description": "Use this guide for all outerwear including coats, jackets, and blazers",
+      "measurements": [
+        {
+          "size": "XS",
+          "chest_inches": "34-36",
+          "chest_cm": "86-91",
+          "shoulder_inches": "16",
+          "shoulder_cm": "41",
+          "sleeve_inches": "32",
+          "sleeve_cm": "81",
+          "length_inches": "27",
+          "length_cm": "69"
+        },
+        {
+          "size": "S",
+          "chest_inches": "36-38",
+          "chest_cm": "91-97",
+          "shoulder_inches": "17",
+          "shoulder_cm": "43",
+          "sleeve_inches": "33",
+          "sleeve_cm": "84",
+          "length_inches": "28",
+          "length_cm": "71"
+        },
+        {
+          "size": "M",
+          "chest_inches": "40-42",
+          "chest_cm": "102-107",
+          "shoulder_inches": "18",
+          "shoulder_cm": "46",
+          "sleeve_inches": "34",
+          "sleeve_cm": "86",
+          "length_inches": "29",
+          "length_cm": "74"
+        },
+        {
+          "size": "L",
+          "chest_inches": "44-46",
+          "chest_cm": "112-117",
+          "shoulder_inches": "19",
+          "shoulder_cm": "48",
+          "sleeve_inches": "35",
+          "sleeve_cm": "89",
+          "length_inches": "30",
+          "length_cm": "76"
+        },
+        {
+          "size": "XL",
+          "chest_inches": "48-50",
+          "chest_cm": "122-127",
+          "shoulder_inches": "20",
+          "shoulder_cm": "51",
+          "sleeve_inches": "36",
+          "sleeve_cm": "91",
+          "length_inches": "31",
+          "length_cm": "79"
+        },
+        {
+          "size": "XXL",
+          "chest_inches": "52-54",
+          "chest_cm": "132-137",
+          "shoulder_inches": "21",
+          "shoulder_cm": "53",
+          "sleeve_inches": "37",
+          "sleeve_cm": "94",
+          "length_inches": "32",
+          "length_cm": "81"
+        }
+      ],
+      "how_to_measure": [
+        "Chest: Measure around the fullest part of your chest with arms at your side",
+        "Shoulder: Measure from shoulder seam to shoulder seam across the back",
+        "Sleeve: Measure from the center back of the neck to the wrist",
+        "Length: Measure from the highest point of the shoulder to the hem"
+      ]
+    },
+    "dresses": {
+      "name": "Dresses Size Guide",
+      "description": "Use this guide for all dresses",
+      "measurements": [
+        {
+          "size": "XS",
+          "bust_inches": "32-33",
+          "bust_cm": "81-84",
+          "waist_inches": "24-25",
+          "waist_cm": "61-64",
+          "hips_inches": "34-35",
+          "hips_cm": "86-89",
+          "length_inches": "36",
+          "length_cm": "91"
+        },
+        {
+          "size": "S",
+          "bust_inches": "34-35",
+          "bust_cm": "86-89",
+          "waist_inches": "26-27",
+          "waist_cm": "66-69",
+          "hips_inches": "36-37",
+          "hips_cm": "91-94",
+          "length_inches": "37",
+          "length_cm": "94"
+        },
+        {
+          "size": "M",
+          "bust_inches": "36-37",
+          "bust_cm": "91-94",
+          "waist_inches": "28-29",
+          "waist_cm": "71-74",
+          "hips_inches": "38-39",
+          "hips_cm": "97-99",
+          "length_inches": "38",
+          "length_cm": "97"
+        },
+        {
+          "size": "L",
+          "bust_inches": "38-40",
+          "bust_cm": "97-102",
+          "waist_inches": "30-32",
+          "waist_cm": "76-81",
+          "hips_inches": "40-42",
+          "hips_cm": "102-107",
+          "length_inches": "39",
+          "length_cm": "99"
+        },
+        {
+          "size": "XL",
+          "bust_inches": "42-44",
+          "bust_cm": "107-112",
+          "waist_inches": "34-36",
+          "waist_cm": "86-91",
+          "hips_inches": "44-46",
+          "hips_cm": "112-117",
+          "length_inches": "40",
+          "length_cm": "102"
+        }
+      ],
+      "how_to_measure": [
+        "Bust: Measure around the fullest part of your bust",
+        "Waist: Measure around your natural waistline",
+        "Hips: Measure around the fullest part of your hips",
+        "Length: Measure from shoulder to hem"
+      ]
+    },
+    "footwear": {
+      "name": "Footwear Size Guide",
+      "description": "Use this guide for all footwear",
+      "measurements": [
+        {
+          "us_size": "6",
+          "uk_size": "5",
+          "eu_size": "38",
+          "foot_length_inches": "9.25",
+          "foot_length_cm": "23.5"
+        },
+        {
+          "us_size": "7",
+          "uk_size": "6",
+          "eu_size": "39",
+          "foot_length_inches": "9.625",
+          "foot_length_cm": "24.4"
+        },
+        {
+          "us_size": "8",
+          "uk_size": "7",
+          "eu_size": "41",
+          "foot_length_inches": "10",
+          "foot_length_cm": "25.4"
+        },
+        {
+          "us_size": "9",
+          "uk_size": "8",
+          "eu_size": "42",
+          "foot_length_inches": "10.375",
+          "foot_length_cm": "26.3"
+        },
+        {
+          "us_size": "10",
+          "uk_size": "9",
+          "eu_size": "43",
+          "foot_length_inches": "10.75",
+          "foot_length_cm": "27.3"
+        },
+        {
+          "us_size": "11",
+          "uk_size": "10",
+          "eu_size": "44",
+          "foot_length_inches": "11.125",
+          "foot_length_cm": "28.3"
+        },
+        {
+          "us_size": "12",
+          "uk_size": "11",
+          "eu_size": "46",
+          "foot_length_inches": "11.5",
+          "foot_length_cm": "29.2"
+        }
+      ],
+      "how_to_measure": [
+        "Stand on a piece of paper and trace your foot",
+        "Measure from the longest toe to the heel",
+        "Use the measurement to find your size in the chart above",
+        "If between sizes, we recommend sizing up for boots"
+      ]
+    },
+    "accessories": {
+      "name": "Accessories Size Guide",
+      "description": "Scarves are one-size-fits-most",
+      "note": "Our wool scarves measure approximately 70 inches (178 cm) in length and 12 inches (30 cm) in width, providing versatile styling options."
+    }
+  }
+}

@@ -1,0 +1,268 @@
+{
+  "single_product_template": {
+    "name": "WinterSnow Single Product",
+    "type": "single_product",
+    "description": "High-conversion product page with size guide modal and review cards",
+    "sections": [
+      {
+        "section_id": "breadcrumbs",
+        "type": "breadcrumb",
+        "widgets": [
+          {
+            "widget_type": "woocommerce_breadcrumb",
+            "settings": {
+              "show_home": true,
+              "separator": "/"
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "product_main",
+        "type": "two_column",
+        "column_ratio": "1:1",
+        "columns": [
+          {
+            "column": "left",
+            "widgets": [
+              {
+                "widget_type": "product_images",
+                "settings": {
+                  "gallery_type": "slider",
+                  "show_thumbnails": true,
+                  "thumbnail_position": "left",
+                  "enable_lightbox": true,
+                  "enable_zoom": true
+                }
+              }
+            ]
+          },
+          {
+            "column": "right",
+            "widgets": [
+              {
+                "widget_type": "product_title",
+                "settings": {
+                  "html_tag": "h1",
+                  "font_size": "32px",
+                  "font_weight": "600"
+                }
+              },
+              {
+                "widget_type": "product_rating",
+                "settings": {
+                  "show_rating": true,
+                  "show_review_count": true,
+                  "link_to_reviews": true
+                }
+              },
+              {
+                "widget_type": "product_price",
+                "settings": {
+                  "show_regular_price": true,
+                  "show_sale_badge": true,
+                  "sale_badge_text": "SALE",
+                  "font_size": "28px"
+                }
+              },
+              {
+                "widget_type": "icon_list",
+                "settings": {
+                  "items": [
+                    {
+                      "icon": "💰",
+                      "text": "Save 10% on Bulk Buy (3+ items)",
+                      "link": ""
+                    },
+                    {
+                      "icon": "🚚",
+                      "text": "Free Delivery on Orders Over $100",
+                      "link": ""
+                    },
+                    {
+                      "icon": "🔄",
+                      "text": "30-Day Easy Returns",
+                      "link": "/returns-policy"
+                    },
+                    {
+                      "icon": "✓",
+                      "text": "Secure Checkout",
+                      "link": ""
+                    }
+                  ],
+                  "icon_size": "20px",
+                  "spacing": "10px"
+                }
+              },
+              {
+                "widget_type": "product_short_description",
+                "settings": {
+                  "font_size": "16px",
+                  "line_height": "1.6"
+                }
+              },
+              {
+                "widget_type": "add_to_cart",
+                "settings": {
+                  "show_quantity": true,
+                  "show_stock": true,
+                  "button_text": "Add to Cart",
+                  "button_size": "large",
+                  "button_style": "primary"
+                }
+              },
+              {
+                "widget_type": "button",
+                "settings": {
+                  "text": "📏 Size Guide",
+                  "link_type": "popup",
+                  "popup_action": "open_size_guide_popup",
+                  "button_style": "outline",
+                  "button_size": "medium",
+                  "icon_position": "left"
+                },
+                "popup_config": {
+                  "popup_id": "size_guide_popup",
+                  "popup_trigger": "click",
+                  "popup_close_button": true,
+                  "popup_overlay": true,
+                  "popup_animation": "fade_in"
+                }
+              },
+              {
+                "widget_type": "product_meta",
+                "settings": {
+                  "show_sku": true,
+                  "show_categories": true,
+                  "show_tags": true
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "section_id": "product_tabs",
+        "type": "tabs",
+        "widgets": [
+          {
+            "widget_type": "product_data_tabs",
+            "settings": {
+              "tabs": ["description", "additional_information", "reviews"],
+              "tab_style": "horizontal",
+              "active_tab_color": "#333333"
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "product_reviews",
+        "type": "reviews",
+        "widgets": [
+          {
+            "widget_type": "product_reviews",
+            "settings": {
+              "title": "Customer Reviews",
+              "skin": "card",
+              "show_rating_summary": true,
+              "show_review_form": true,
+              "reviews_per_page": 5,
+              "sort_by": "most_recent",
+              "card_styling": {
+                "background": "#f9f9f9",
+                "border_radius": "8px",
+                "padding": "20px",
+                "margin_bottom": "15px",
+                "box_shadow": "0 2px 4px rgba(0,0,0,0.1)"
+              },
+              "show_verified_badge": true,
+              "verified_badge_text": "Verified Purchase",
+              "verified_badge_color": "#4caf50"
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "related_products",
+        "type": "related_products",
+        "widgets": [
+          {
+            "widget_type": "related_products",
+            "settings": {
+              "title": "You May Also Like",
+              "products_count": 4,
+              "columns": 4,
+              "show_rating": true,
+              "show_price": true
+            }
+          }
+        ]
+      }
+    ],
+    "popups": [
+      {
+        "popup_id": "size_guide_popup",
+        "name": "Size Guide Popup",
+        "type": "modal",
+        "trigger": "button_click",
+        "content": {
+          "title": "Size Guide",
+          "dynamic_content": true,
+          "content_source": "size_guide_table",
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "text": "Find Your Perfect Fit",
+              "html_tag": "h2"
+            },
+            {
+              "widget_type": "text",
+              "content": "Use our size guide below to find your perfect size. All measurements are in inches and centimeters."
+            },
+            {
+              "widget_type": "table",
+              "dynamic_data": "product_size_guide",
+              "table_styling": {
+                "header_background": "#333333",
+                "header_text_color": "#ffffff",
+                "border_color": "#e0e0e0",
+                "row_hover": "#f5f5f5"
+              }
+            },
+            {
+              "widget_type": "accordion",
+              "items": [
+                {
+                  "title": "How to Measure",
+                  "content": "Follow these simple steps to measure yourself accurately for the best fit."
+                }
+              ]
+            }
+          ]
+        },
+        "styling": {
+          "width": "800px",
+          "max_width": "90vw",
+          "background": "#ffffff",
+          "border_radius": "8px",
+          "padding": "40px",
+          "box_shadow": "0 4px 20px rgba(0,0,0,0.15)"
+        },
+        "responsive": {
+          "mobile_width": "95vw",
+          "mobile_padding": "20px"
+        }
+      }
+    ],
+    "responsive_settings": {
+      "mobile": {
+        "product_main_layout": "single_column",
+        "image_position": "top"
+      },
+      "tablet": {
+        "product_main_layout": "two_column",
+        "column_ratio": "1:1"
+      }
+    }
+  }
+}
