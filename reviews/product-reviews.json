@@ -1,0 +1,424 @@
+{
+  "reviews": [
+    {
+      "product_id": 1,
+      "product_name": "Winter Wool Coat",
+      "reviews": [
+        {
+          "reviewer_name": "Sarah Johnson",
+          "rating": 5,
+          "title": "Absolutely Perfect for Winter!",
+          "review": "This coat is exactly what I needed for the harsh winter weather. The wool blend keeps me incredibly warm, and the tailored fit looks professional. I've received so many compliments! The quality is outstanding and well worth the price.",
+          "verified_purchase": true,
+          "date": "2024-12-15"
+        },
+        {
+          "reviewer_name": "Michael Chen",
+          "rating": 5,
+          "title": "Premium Quality",
+          "review": "I was hesitant about the price, but this coat exceeded all expectations. The construction is solid, seams are perfect, and the material feels luxurious. It's become my go-to winter coat.",
+          "verified_purchase": true,
+          "date": "2024-11-28"
+        },
+        {
+          "reviewer_name": "Emma Williams",
+          "rating": 4,
+          "title": "Great coat, runs slightly large",
+          "review": "Beautiful coat with excellent warmth. My only note is that it runs a bit large - I ordered my usual size M but could have gone with S. Still love it though!",
+          "verified_purchase": true,
+          "date": "2024-12-03"
+        },
+        {
+          "reviewer_name": "David Martinez",
+          "rating": 5,
+          "title": "Best Winter Purchase",
+          "review": "Finally found a coat that's both stylish and functional. Keeps me warm even in sub-zero temperatures. The navy color is sophisticated and versatile.",
+          "verified_purchase": true,
+          "date": "2024-11-20"
+        }
+      ]
+    },
+    {
+      "product_id": 2,
+      "product_name": "Cashmere Sweater",
+      "reviews": [
+        {
+          "reviewer_name": "Jennifer Lee",
+          "rating": 5,
+          "title": "Luxuriously Soft",
+          "review": "This cashmere sweater is incredibly soft and comfortable. The quality is apparent from the moment you touch it. Perfect for both casual and dressy occasions.",
+          "verified_purchase": true,
+          "date": "2024-12-10"
+        },
+        {
+          "reviewer_name": "Robert Brown",
+          "rating": 5,
+          "title": "Worth Every Penny",
+          "review": "I've owned several cashmere sweaters, and this one is by far the best quality I've found at this price point. The beige color is perfect and goes with everything.",
+          "verified_purchase": true,
+          "date": "2024-11-25"
+        },
+        {
+          "reviewer_name": "Amanda Taylor",
+          "rating": 4,
+          "title": "Beautiful sweater",
+          "review": "Love the softness and fit. Just be careful with washing - follow the care instructions exactly. I hand wash mine to be safe.",
+          "verified_purchase": true,
+          "date": "2024-12-01"
+        },
+        {
+          "reviewer_name": "James Wilson",
+          "rating": 5,
+          "title": "Premium Cashmere",
+          "review": "As someone who works in fashion, I can confirm this is genuine high-quality cashmere. The price is reasonable for what you're getting. Highly recommend!",
+          "verified_purchase": true,
+          "date": "2024-11-18"
+        },
+        {
+          "reviewer_name": "Lisa Anderson",
+          "rating": 5,
+          "title": "My favorite sweater",
+          "review": "I wear this at least twice a week. It's so comfortable and warm without being bulky. The gray color is versatile and elegant.",
+          "verified_purchase": true,
+          "date": "2024-12-08"
+        }
+      ]
+    },
+    {
+      "product_id": 3,
+      "product_name": "Denim Jeans",
+      "reviews": [
+        {
+          "reviewer_name": "Chris Thompson",
+          "rating": 5,
+          "title": "Perfect Fit!",
+          "review": "These jeans fit perfectly! The quality of the denim is excellent - not too stiff, not too stretchy. They've held up great after multiple washes.",
+          "verified_purchase": true,
+          "date": "2024-12-12"
+        },
+        {
+          "reviewer_name": "Maria Garcia",
+          "rating": 4,
+          "title": "Great everyday jeans",
+          "review": "Comfortable for all-day wear. The light blue wash is exactly as pictured. I ordered my usual size and they fit true to size.",
+          "verified_purchase": true,
+          "date": "2024-11-30"
+        },
+        {
+          "reviewer_name": "Kevin White",
+          "rating": 5,
+          "title": "Best jeans I've owned",
+          "review": "The quality is outstanding for the price. They're durable, comfortable, and look great. I bought a second pair!",
+          "verified_purchase": true,
+          "date": "2024-12-05"
+        },
+        {
+          "reviewer_name": "Rachel Green",
+          "rating": 5,
+          "title": "Classic and comfortable",
+          "review": "These are my new go-to jeans. The fit is flattering and they're incredibly comfortable. The dark blue wash is versatile.",
+          "verified_purchase": true,
+          "date": "2024-11-22"
+        }
+      ]
+    },
+    {
+      "product_id": 4,
+      "product_name": "Festive Party Dress",
+      "reviews": [
+        {
+          "reviewer_name": "Sophia Martinez",
+          "rating": 5,
+          "title": "Stunning Holiday Dress!",
+          "review": "This dress was absolutely perfect for my company holiday party! The burgundy color is rich and festive, and the fit is incredibly flattering. Received so many compliments!",
+          "verified_purchase": true,
+          "date": "2024-12-18"
+        },
+        {
+          "reviewer_name": "Isabella Rodriguez",
+          "rating": 5,
+          "title": "Beautiful and elegant",
+          "review": "The quality exceeded my expectations. The fabric has a lovely subtle shimmer that photographs beautifully. The draping is elegant and forgiving.",
+          "verified_purchase": true,
+          "date": "2024-12-14"
+        },
+        {
+          "reviewer_name": "Olivia Johnson",
+          "rating": 4,
+          "title": "Great party dress",
+          "review": "Love this dress! The emerald color is gorgeous. Only giving 4 stars because it's slightly longer than I expected, but nothing a quick hem can't fix.",
+          "verified_purchase": true,
+          "date": "2024-12-10"
+        },
+        {
+          "reviewer_name": "Emily Davis",
+          "rating": 5,
+          "title": "Perfect for New Year's Eve",
+          "review": "Wore this to a New Year's party and felt amazing. The fit is true to size and the fabric is comfortable for all-night wear.",
+          "verified_purchase": true,
+          "date": "2024-12-28"
+        },
+        {
+          "reviewer_name": "Ava Wilson",
+          "rating": 5,
+          "title": "Holiday season essential",
+          "review": "This dress is a must-have for the holiday season. The navy version is sophisticated and can be dressed up or down with accessories.",
+          "verified_purchase": true,
+          "date": "2024-12-06"
+        }
+      ]
+    },
+    {
+      "product_id": 5,
+      "product_name": "Leather Jacket",
+      "reviews": [
+        {
+          "reviewer_name": "Jake Morrison",
+          "rating": 5,
+          "title": "Genuine Quality Leather",
+          "review": "This is a real leather jacket at an incredible price. The leather is thick and well-constructed. It's already breaking in nicely and looks better each time I wear it.",
+          "verified_purchase": true,
+          "date": "2024-12-16"
+        },
+        {
+          "reviewer_name": "Alex Turner",
+          "rating": 5,
+          "title": "Investment piece",
+          "review": "Worth every dollar. This jacket will last for years. The fit is perfect and the asymmetric zip is classic. Love the quilted shoulder detail.",
+          "verified_purchase": true,
+          "date": "2024-11-27"
+        },
+        {
+          "reviewer_name": "Ryan Cooper",
+          "rating": 4,
+          "title": "Great jacket, needs breaking in",
+          "review": "Beautiful jacket but it's quite stiff initially. After a few weeks of wear, it's softening up nicely. The quality is definitely there.",
+          "verified_purchase": true,
+          "date": "2024-12-02"
+        },
+        {
+          "reviewer_name": "Marcus Hill",
+          "rating": 5,
+          "title": "Classic biker style",
+          "review": "Exactly what I was looking for. The black leather is perfect, and the multiple pockets are functional. Highly recommend sizing up if you want to layer.",
+          "verified_purchase": true,
+          "date": "2024-11-24"
+        }
+      ]
+    },
+    {
+      "product_id": 6,
+      "product_name": "Cotton T-Shirt",
+      "reviews": [
+        {
+          "reviewer_name": "Tom Harris",
+          "rating": 5,
+          "title": "Perfect basic tee",
+          "review": "These are the best basic t-shirts I've found. The cotton is soft, the fit is great, and they hold up well after washing. I bought 5 of them!",
+          "verified_purchase": true,
+          "date": "2024-12-11"
+        },
+        {
+          "reviewer_name": "Sam Parker",
+          "rating": 5,
+          "title": "Great quality for the price",
+          "review": "Excellent value. The white ones haven't become see-through and the black ones haven't faded. Very happy with this purchase.",
+          "verified_purchase": true,
+          "date": "2024-12-04"
+        },
+        {
+          "reviewer_name": "Jordan Lewis",
+          "rating": 4,
+          "title": "Solid everyday shirt",
+          "review": "Good quality cotton, comfortable fit. They run true to size. I wear these constantly and they still look great.",
+          "verified_purchase": true,
+          "date": "2024-11-29"
+        },
+        {
+          "reviewer_name": "Casey Mitchell",
+          "rating": 5,
+          "title": "Can't beat these basics",
+          "review": "Best basic tees on the market. The reinforced seams make them super durable. I'm replacing all my old t-shirts with these.",
+          "verified_purchase": true,
+          "date": "2024-12-07"
+        },
+        {
+          "reviewer_name": "Morgan Reed",
+          "rating": 5,
+          "title": "Wardrobe staple",
+          "review": "These are my go-to shirts. The gray and navy colors are perfect for mixing and matching. Highly recommend!",
+          "verified_purchase": true,
+          "date": "2024-11-21"
+        }
+      ]
+    },
+    {
+      "product_id": 7,
+      "product_name": "Wool Scarf",
+      "reviews": [
+        {
+          "reviewer_name": "Hannah Scott",
+          "rating": 5,
+          "title": "Beautiful winter scarf",
+          "review": "This scarf is so soft and warm! The red plaid pattern is perfect for the holidays. The length is great for different styling options.",
+          "verified_purchase": true,
+          "date": "2024-12-13"
+        },
+        {
+          "reviewer_name": "Grace Adams",
+          "rating": 5,
+          "title": "Perfect holiday gift",
+          "review": "Bought this as a gift and loved it so much I got one for myself too! The merino wool is incredibly soft and the woven pattern is beautiful.",
+          "verified_purchase": true,
+          "date": "2024-12-09"
+        },
+        {
+          "reviewer_name": "Lily Baker",
+          "rating": 4,
+          "title": "Warm and stylish",
+          "review": "Great quality scarf. The cream color is exactly as pictured. Very warm without being too bulky.",
+          "verified_purchase": true,
+          "date": "2024-12-01"
+        },
+        {
+          "reviewer_name": "Chloe Turner",
+          "rating": 5,
+          "title": "Cozy and elegant",
+          "review": "The navy scarf is gorgeous. It's become my everyday winter accessory. The quality is excellent for the price.",
+          "verified_purchase": true,
+          "date": "2024-11-26"
+        }
+      ]
+    },
+    {
+      "product_id": 8,
+      "product_name": "Fleece Hoodie",
+      "reviews": [
+        {
+          "reviewer_name": "Tyler Evans",
+          "rating": 5,
+          "title": "So comfortable!",
+          "review": "This hoodie is incredibly comfortable. The fleece is soft on the inside and the fit is perfect. I live in this thing!",
+          "verified_purchase": true,
+          "date": "2024-12-14"
+        },
+        {
+          "reviewer_name": "Austin King",
+          "rating": 5,
+          "title": "Best hoodie ever",
+          "review": "The quality is amazing. The brushed interior is so soft and warm. The gray color is versatile and looks great.",
+          "verified_purchase": true,
+          "date": "2024-12-08"
+        },
+        {
+          "reviewer_name": "Dylan Wright",
+          "rating": 4,
+          "title": "Great everyday hoodie",
+          "review": "Perfect for casual wear. The kangaroo pocket is deep and functional. Runs true to size.",
+          "verified_purchase": true,
+          "date": "2024-11-30"
+        },
+        {
+          "reviewer_name": "Logan Green",
+          "rating": 5,
+          "title": "Warm and well-made",
+          "review": "This hoodie is thick and warm without being too heavy. The black color hasn't faded after multiple washes. Highly recommend!",
+          "verified_purchase": true,
+          "date": "2024-12-03"
+        },
+        {
+          "reviewer_name": "Mason Clark",
+          "rating": 5,
+          "title": "Perfect for layering",
+          "review": "Great quality fleece. I wear this over t-shirts and under jackets. The burgundy color is unique and stylish.",
+          "verified_purchase": true,
+          "date": "2024-11-23"
+        }
+      ]
+    },
+    {
+      "product_id": 9,
+      "product_name": "Formal Blazer",
+      "reviews": [
+        {
+          "reviewer_name": "Daniel Foster",
+          "rating": 5,
+          "title": "Professional and well-fitted",
+          "review": "This blazer is perfect for the office. The slim fit is modern and flattering. The quality of the wool blend is excellent for the price.",
+          "verified_purchase": true,
+          "date": "2024-12-15"
+        },
+        {
+          "reviewer_name": "Andrew Collins",
+          "rating": 5,
+          "title": "Excellent business casual blazer",
+          "review": "Wore this to a job interview and got the job! The navy color is professional and the fit is spot-on. The lining is quality and the pockets are functional.",
+          "verified_purchase": true,
+          "date": "2024-11-28"
+        },
+        {
+          "reviewer_name": "Nathan Brooks",
+          "rating": 4,
+          "title": "Great blazer for the price",
+          "review": "Very impressed with the quality. The charcoal color is versatile. Only wish the shoulders were slightly less structured, but that's personal preference.",
+          "verified_purchase": true,
+          "date": "2024-12-05"
+        },
+        {
+          "reviewer_name": "Ethan Sanders",
+          "rating": 5,
+          "title": "Perfect fit",
+          "review": "Finally found a blazer that fits perfectly off the rack. The modern slim fit is exactly what I was looking for. Highly recommend!",
+          "verified_purchase": true,
+          "date": "2024-11-19"
+        }
+      ]
+    },
+    {
+      "product_id": 10,
+      "product_name": "Winter Boots",
+      "reviews": [
+        {
+          "reviewer_name": "Brandon Hayes",
+          "rating": 5,
+          "title": "Warm and waterproof!",
+          "review": "These boots are amazing! Kept my feet warm and dry in snow and slush. The anti-slip sole really works. Best winter boots I've owned.",
+          "verified_purchase": true,
+          "date": "2024-12-17"
+        },
+        {
+          "reviewer_name": "Derek Morgan",
+          "rating": 5,
+          "title": "Perfect winter boots",
+          "review": "The insulation is excellent - my feet stay warm even in below-freezing temperatures. The faux fur lining is so comfortable.",
+          "verified_purchase": true,
+          "date": "2024-12-10"
+        },
+        {
+          "reviewer_name": "Connor Russell",
+          "rating": 4,
+          "title": "Great boots, run slightly large",
+          "review": "Excellent quality boots. The waterproofing works great. Just note they run about a half size large, so size down if you're between sizes.",
+          "verified_purchase": true,
+          "date": "2024-12-04"
+        },
+        {
+          "reviewer_name": "Lucas Bennett",
+          "rating": 5,
+          "title": "Best value winter boots",
+          "review": "These boots are incredibly well-made for the price. The brown color is rich and the construction is solid. Very happy with this purchase!",
+          "verified_purchase": true,
+          "date": "2024-11-25"
+        },
+        {
+          "reviewer_name": "Gavin Phillips",
+          "rating": 5,
+          "title": "Excellent winter footwear",
+          "review": "Walked through snow and ice with no issues. The grip is excellent and they're very comfortable even for all-day wear.",
+          "verified_purchase": true,
+          "date": "2024-12-12"
+        }
+      ]
+    }
+  ]
+}

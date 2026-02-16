@@ -1,0 +1,192 @@
+{
+  "header_template": {
+    "name": "WinterSnow Commerce Header",
+    "type": "header",
+    "description": "Global header with dark mode toggle, AJAX search, and mega menu",
+    "sections": [
+      {
+        "section_id": "top_bar",
+        "type": "floating_bar",
+        "content": {
+          "text": "🎉 Flat 20% OFF — Code: FESTIVE20",
+          "background_color": "#d32f2f",
+          "text_color": "#ffffff",
+          "position": "top",
+          "display": "all_pages"
+        }
+      },
+      {
+        "section_id": "main_header",
+        "type": "header_section",
+        "columns": 3,
+        "layout": "Logo | Search | Dark Mode Toggle",
+        "widgets": [
+          {
+            "widget_type": "site_logo",
+            "column": 1,
+            "settings": {
+              "logo_text": "WinterSnow Commerce",
+              "logo_size": "medium"
+            }
+          },
+          {
+            "widget_type": "woo_ajax_search",
+            "column": 2,
+            "plugin_required": "Unlimited Elements",
+            "settings": {
+              "placeholder": "Search products...",
+              "show_product_image": true,
+              "show_product_price": true,
+              "show_category": true,
+              "results_limit": 5,
+              "search_in": ["products", "categories"],
+              "animation": "fade",
+              "dark_mode_support": true
+            },
+            "styling": {
+              "search_bar_background": "var(--search-bg)",
+              "search_bar_text": "var(--search-text)",
+              "results_background": "var(--results-bg)",
+              "hover_color": "#f5f5f5"
+            }
+          },
+          {
+            "widget_type": "dark_mode_toggle",
+            "column": 3,
+            "plugin_required": "Unlimited Elements",
+            "settings": {
+              "icon_sun": "☀️",
+              "icon_moon": "🌙",
+              "default_mode": "auto",
+              "detect_system_preference": true,
+              "save_preference": "local_storage"
+            },
+            "styling": {
+              "icon_size": "24px",
+              "icon_color": "#333333",
+              "icon_color_dark": "#ffffff"
+            }
+          }
+        ]
+      },
+      {
+        "section_id": "navigation",
+        "type": "nav_menu",
+        "widgets": [
+          {
+            "widget_type": "nav_menu",
+            "plugin_required": "Elementor Pro",
+            "settings": {
+              "menu_name": "Main Navigation",
+              "layout": "horizontal",
+              "enable_mega_menu": true,
+              "mega_menu_items": [
+                {
+                  "menu_item": "Festive Specials",
+                  "type": "mega_menu",
+                  "columns": 3,
+                  "content": [
+                    {
+                      "column": 1,
+                      "title": "Holiday Essentials",
+                      "items": ["Festive Party Dress", "Wool Scarf", "Winter Boots"]
+                    },
+                    {
+                      "column": 2,
+                      "title": "Gift Ideas",
+                      "items": ["Cashmere Sweater", "Leather Jacket", "Formal Blazer"]
+                    },
+                    {
+                      "column": 3,
+                      "title": "Special Offers",
+                      "widget": "countdown_timer",
+                      "promo_text": "Holiday Sale Ends Soon!"
+                    }
+                  ]
+                },
+                {
+                  "menu_item": "New In",
+                  "type": "mega_menu",
+                  "columns": 2,
+                  "content": [
+                    {
+                      "column": 1,
+                      "title": "Latest Arrivals",
+                      "items": ["Winter Wool Coat", "Fleece Hoodie", "Denim Jeans"]
+                    },
+                    {
+                      "column": 2,
+                      "title": "Trending",
+                      "items": ["Cotton T-Shirt", "Winter Boots", "Wool Scarf"]
+                    }
+                  ]
+                }
+              ]
+            },
+            "menu_items": [
+              {
+                "label": "Home",
+                "url": "/",
+                "type": "standard"
+              },
+              {
+                "label": "Shop",
+                "url": "/shop",
+                "type": "standard"
+              },
+              {
+                "label": "Festive Specials",
+                "url": "/product-tag/festive",
+                "type": "mega_menu"
+              },
+              {
+                "label": "New In",
+                "url": "/new-arrivals",
+                "type": "mega_menu"
+              },
+              {
+                "label": "Categories",
+                "type": "dropdown",
+                "submenu": [
+                  {"label": "Outerwear", "url": "/product-category/outerwear"},
+                  {"label": "Sweaters", "url": "/product-category/sweaters"},
+                  {"label": "Bottoms", "url": "/product-category/bottoms"},
+                  {"label": "Dresses", "url": "/product-category/dresses"},
+                  {"label": "Accessories", "url": "/product-category/accessories"},
+                  {"label": "Footwear", "url": "/product-category/footwear"}
+                ]
+              },
+              {
+                "label": "My Account",
+                "url": "/my-account",
+                "type": "standard"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "responsive_settings": {
+      "mobile_menu_breakpoint": "768px",
+      "tablet_menu_breakpoint": "1024px",
+      "hide_search_on_mobile": false,
+      "hamburger_menu": true
+    },
+    "css_variables": {
+      "light_mode": {
+        "--search-bg": "#f5f5f5",
+        "--search-text": "#333333",
+        "--results-bg": "#ffffff",
+        "--header-bg": "#ffffff",
+        "--header-text": "#333333"
+      },
+      "dark_mode": {
+        "--search-bg": "#2d2d2d",
+        "--search-text": "#ffffff",
+        "--results-bg": "#1a1a1a",
+        "--header-bg": "#1a1a1a",
+        "--header-text": "#ffffff"
+      }
+    }
+  }
+}

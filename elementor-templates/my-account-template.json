@@ -1,0 +1,294 @@
+{
+  "my_account_template": {
+    "name": "WinterSnow My Account",
+    "type": "my_account",
+    "description": "Horizontal tabs layout with clear order status badges",
+    "settings": {
+      "layout": "horizontal_tabs",
+      "tab_position": "top",
+      "active_tab_style": "underline",
+      "tab_spacing": "20px"
+    },
+    "tabs": [
+      {
+        "tab_id": "dashboard",
+        "label": "Dashboard",
+        "icon": "🏠",
+        "content": {
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "settings": {
+                "text": "Welcome to Your Account",
+                "html_tag": "h2"
+              }
+            },
+            {
+              "widget_type": "text",
+              "content": "From your account dashboard, you can view your recent orders, manage your shipping and billing addresses, and edit your password and account details."
+            },
+            {
+              "widget_type": "account_navigation_cards",
+              "settings": {
+                "cards": [
+                  {
+                    "title": "Orders",
+                    "icon": "📦",
+                    "description": "View and track your orders",
+                    "link": "/my-account/orders"
+                  },
+                  {
+                    "title": "Addresses",
+                    "icon": "📍",
+                    "description": "Manage billing and shipping",
+                    "link": "/my-account/edit-address"
+                  },
+                  {
+                    "title": "Account Details",
+                    "icon": "👤",
+                    "description": "Edit your information",
+                    "link": "/my-account/edit-account"
+                  }
+                ],
+                "columns": 3,
+                "card_style": "elevated"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tab_id": "orders",
+        "label": "Orders",
+        "icon": "📦",
+        "priority": "high",
+        "analytics_note": "Most visited tab - optimize design",
+        "content": {
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "settings": {
+                "text": "My Orders",
+                "html_tag": "h2"
+              }
+            },
+            {
+              "widget_type": "orders_table",
+              "settings": {
+                "show_order_number": true,
+                "show_order_date": true,
+                "show_order_status": true,
+                "show_order_total": true,
+                "show_order_actions": true,
+                "orders_per_page": 10,
+                "status_badges": {
+                  "enabled": true,
+                  "style": "modern",
+                  "statuses": [
+                    {
+                      "status": "processing",
+                      "label": "Processing",
+                      "color": "#ff9800",
+                      "icon": "⏳"
+                    },
+                    {
+                      "status": "shipped",
+                      "label": "Shipped",
+                      "color": "#2196f3",
+                      "icon": "🚚"
+                    },
+                    {
+                      "status": "delivered",
+                      "label": "Delivered",
+                      "color": "#4caf50",
+                      "icon": "✓"
+                    },
+                    {
+                      "status": "on-hold",
+                      "label": "On Hold",
+                      "color": "#9e9e9e",
+                      "icon": "⏸"
+                    },
+                    {
+                      "status": "completed",
+                      "label": "Completed",
+                      "color": "#4caf50",
+                      "icon": "✓"
+                    },
+                    {
+                      "status": "cancelled",
+                      "label": "Cancelled",
+                      "color": "#f44336",
+                      "icon": "✕"
+                    },
+                    {
+                      "status": "refunded",
+                      "label": "Refunded",
+                      "color": "#9c27b0",
+                      "icon": "↩"
+                    },
+                    {
+                      "status": "failed",
+                      "label": "Failed",
+                      "color": "#f44336",
+                      "icon": "!"
+                    }
+                  ]
+                },
+                "action_buttons": [
+                  {
+                    "action": "view",
+                    "label": "View",
+                    "style": "primary"
+                  },
+                  {
+                    "action": "track",
+                    "label": "Track",
+                    "style": "outline",
+                    "show_for_statuses": ["shipped", "processing"]
+                  }
+                ],
+                "empty_state": {
+                  "message": "No orders found",
+                  "button_text": "Start Shopping",
+                  "button_link": "/shop"
+                }
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tab_id": "downloads",
+        "label": "Downloads",
+        "icon": "⬇️",
+        "content": {
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "settings": {
+                "text": "Available Downloads",
+                "html_tag": "h2"
+              }
+            },
+            {
+              "widget_type": "downloads_table",
+              "settings": {
+                "show_product_name": true,
+                "show_downloads_remaining": true,
+                "show_expires": true,
+                "show_download_button": true
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tab_id": "addresses",
+        "label": "Addresses",
+        "icon": "📍",
+        "content": {
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "settings": {
+                "text": "My Addresses",
+                "html_tag": "h2"
+              }
+            },
+            {
+              "widget_type": "addresses",
+              "settings": {
+                "layout": "two_column",
+                "show_billing": true,
+                "show_shipping": true,
+                "card_style": "bordered",
+                "edit_button_style": "outline"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tab_id": "payment_methods",
+        "label": "Payment Methods",
+        "icon": "💳",
+        "content": {
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "settings": {
+                "text": "Saved Payment Methods",
+                "html_tag": "h2"
+              }
+            },
+            {
+              "widget_type": "payment_methods",
+              "settings": {
+                "show_add_new": true,
+                "show_delete": true,
+                "show_set_default": true,
+                "card_style": "modern"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tab_id": "account_details",
+        "label": "Account Details",
+        "icon": "👤",
+        "content": {
+          "widgets": [
+            {
+              "widget_type": "heading",
+              "settings": {
+                "text": "Edit Account Details",
+                "html_tag": "h2"
+              }
+            },
+            {
+              "widget_type": "edit_account",
+              "settings": {
+                "show_first_name": true,
+                "show_last_name": true,
+                "show_display_name": true,
+                "show_email": true,
+                "show_current_password": true,
+                "show_new_password": true,
+                "show_confirm_password": true,
+                "button_text": "Save Changes",
+                "button_style": "primary"
+              }
+            }
+          ]
+        }
+      },
+      {
+        "tab_id": "logout",
+        "label": "Logout",
+        "icon": "🚪",
+        "action": "logout"
+      }
+    ],
+    "styling": {
+      "tab_background": "#ffffff",
+      "tab_text_color": "#666666",
+      "active_tab_background": "#ffffff",
+      "active_tab_text_color": "#333333",
+      "active_tab_border_color": "#333333",
+      "content_background": "#ffffff",
+      "content_padding": "30px"
+    },
+    "responsive_settings": {
+      "mobile": {
+        "layout": "vertical_accordion",
+        "tab_position": "stacked"
+      },
+      "tablet": {
+        "layout": "horizontal_tabs",
+        "scrollable_tabs": true
+      }
+    }
+  }
+}
