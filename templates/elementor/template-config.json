@@ -1,0 +1,318 @@
+{
+  "name": "WinterSnow Commerce - Elementor Templates",
+  "version": "1.0.0",
+  "description": "Elementor template configurations for WinterSnow Commerce theme",
+  "templates": {
+    "header": {
+      "type": "header",
+      "widgets": [
+        {
+          "widget": "logo",
+          "settings": {
+            "link": "home_url"
+          }
+        },
+        {
+          "widget": "navigation-menu",
+          "settings": {
+            "menu": "primary",
+            "layout": "horizontal",
+            "mega_menu": true,
+            "columns": 3
+          }
+        },
+        {
+          "widget": "dark-mode-toggle",
+          "plugin": "unlimited-elements",
+          "settings": {
+            "icon_style": "sun-moon",
+            "auto_detect": true
+          }
+        },
+        {
+          "widget": "woo-ajax-search",
+          "settings": {
+            "show_image": true,
+            "show_price": true,
+            "results_count": 10,
+            "placeholder": "Search products..."
+          }
+        },
+        {
+          "widget": "cart-icon",
+          "settings": {
+            "show_count": true,
+            "mini_cart": "slide_out"
+          }
+        }
+      ]
+    },
+    "festive_homepage": {
+      "type": "page",
+      "sections": [
+        {
+          "section": "promo_bar",
+          "widgets": [
+            {
+              "widget": "floating-bar",
+              "settings": {
+                "text": "🎉 Festive Sale Live! Flat 20% OFF — Code: FESTIVE20 ⏰ Limited Time Offer",
+                "background": "gradient",
+                "colors": ["#e74c3c", "#c0392b"],
+                "sticky": true
+              }
+            }
+          ]
+        },
+        {
+          "section": "countdown",
+          "widgets": [
+            {
+              "widget": "countdown-timer",
+              "settings": {
+                "title": "Festive Sale Ends In:",
+                "end_date": "2026-12-31 23:59:59",
+                "display": ["days", "hours", "minutes", "seconds"]
+              }
+            }
+          ]
+        },
+        {
+          "section": "festive_products",
+          "widgets": [
+            {
+              "widget": "loop-grid",
+              "settings": {
+                "post_type": "product",
+                "query": {
+                  "tax_query": [
+                    {
+                      "taxonomy": "festive_tag",
+                      "field": "slug",
+                      "terms": "festive",
+                      "include_children": false
+                    }
+                  ]
+                },
+                "columns": 4,
+                "posts_per_page": 8,
+                "show_badge": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "single_product": {
+      "type": "single-product",
+      "sections": [
+        {
+          "section": "product_images",
+          "widgets": [
+            {
+              "widget": "product-images",
+              "settings": {
+                "gallery_type": "slider",
+                "zoom": true,
+                "lightbox": true
+              }
+            }
+          ]
+        },
+        {
+          "section": "product_info",
+          "widgets": [
+            {
+              "widget": "product-title",
+              "settings": {
+                "tag": "h1"
+              }
+            },
+            {
+              "widget": "product-rating",
+              "settings": {
+                "show_count": true
+              }
+            },
+            {
+              "widget": "product-price",
+              "settings": {
+                "show_sale_badge": true
+              }
+            },
+            {
+              "widget": "icon-list",
+              "settings": {
+                "items": [
+                  {
+                    "icon": "💰",
+                    "text": "Save 10% on Bulk Buy (5+ items)"
+                  },
+                  {
+                    "icon": "🚚",
+                    "text": "Free Delivery Today"
+                  },
+                  {
+                    "icon": "✅",
+                    "text": "30-Day Money Back Guarantee"
+                  }
+                ]
+              }
+            },
+            {
+              "widget": "button",
+              "settings": {
+                "text": "📏 Size Guide",
+                "link": "#",
+                "action": "popup",
+                "popup_id": "size_guide_modal"
+              }
+            },
+            {
+              "widget": "add-to-cart",
+              "settings": {
+                "show_quantity": true,
+                "redirect_after_add": "mini_cart"
+              }
+            }
+          ]
+        },
+        {
+          "section": "product_description",
+          "widgets": [
+            {
+              "widget": "product-tabs",
+              "settings": {
+                "layout": "horizontal"
+              }
+            }
+          ]
+        },
+        {
+          "section": "product_reviews",
+          "widgets": [
+            {
+              "widget": "product-reviews",
+              "settings": {
+                "skin": "card",
+                "show_avatar": true,
+                "show_rating": true,
+                "show_date": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "my_account": {
+      "type": "my-account",
+      "settings": {
+        "layout": "horizontal-tabs",
+        "tabs": [
+          "dashboard",
+          "orders",
+          "downloads",
+          "addresses",
+          "account-details"
+        ],
+        "show_badges": true,
+        "badge_style": "colored"
+      }
+    },
+    "checkout": {
+      "type": "checkout",
+      "layout": "two-column",
+      "sections": [
+        {
+          "section": "checkout_form",
+          "column": "left",
+          "widgets": [
+            {
+              "widget": "checkout-billing",
+              "settings": {
+                "fields": [
+                  "billing_first_name",
+                  "billing_last_name",
+                  "billing_email",
+                  "billing_phone",
+                  "billing_address_1",
+                  "billing_city",
+                  "billing_postcode",
+                  "billing_country",
+                  "billing_state"
+                ]
+              }
+            },
+            {
+              "widget": "checkout-shipping",
+              "settings": {
+                "show_shipping_calculator": true
+              }
+            }
+          ]
+        },
+        {
+          "section": "order_summary",
+          "column": "right",
+          "widgets": [
+            {
+              "widget": "checkout-order-review",
+              "settings": {
+                "sticky": true,
+                "show_images": true,
+                "show_quantities": true
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "popups": {
+      "size_guide_modal": {
+        "type": "popup",
+        "trigger": "button",
+        "settings": {
+          "width": "800px",
+          "animation": "fade",
+          "overlay": true,
+          "close_button": true
+        },
+        "widgets": [
+          {
+            "widget": "heading",
+            "settings": {
+              "text": "Size Guide",
+              "tag": "h2"
+            }
+          },
+          {
+            "widget": "table",
+            "settings": {
+              "headers": ["Size", "Chest (inches)", "Waist (inches)", "Length (inches)"],
+              "rows": [
+                ["XS", "32-34", "26-28", "26"],
+                ["S", "35-37", "29-31", "27"],
+                ["M", "38-40", "32-34", "28"],
+                ["L", "41-43", "35-37", "29"],
+                ["XL", "44-46", "38-40", "30"],
+                ["XXL", "47-49", "41-43", "31"]
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "recommended_plugins": [
+    "elementor",
+    "elementor-pro",
+    "unlimited-elements-for-elementor",
+    "woocommerce"
+  ],
+  "notes": [
+    "This configuration file provides guidance for setting up Elementor templates",
+    "Install Elementor Pro for full Theme Builder functionality",
+    "Unlimited Elements plugin provides the Dark Mode widget",
+    "Templates can be customized via Elementor UI after activation"
+  ]
+}
